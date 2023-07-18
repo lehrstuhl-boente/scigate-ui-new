@@ -1,0 +1,42 @@
+<svg width="506px" height="423px" viewBox="0 0 506 423" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="Startpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.0854957217">
+		<g id="Group-6" transform="translate(2.817284, 2.639799)" stroke="#000000" stroke-width="3">
+			<line x1="381.881607" y1="267.373356" x2="454.836877" y2="267.373356" id="Path" fill="#1D1D1B" fill-rule="nonzero" transform="translate(418.359242, 267.373356) rotate(139.000000) translate(-418.359242, -267.373356) ">
+			</line>
+			<line x1="-36.4464627" y1="225.179357" x2="364.807519" y2="225.179357" id="Path" fill="#1D1D1B" fill-rule="nonzero" transform="translate(164.180528, 225.179357) rotate(139.000000) translate(-164.180528, -225.179357) ">
+			</line>
+			<path d="M423.79626,243.120978 L423.79626,211.607148 C423.79626,195.443117 436.506456,182.32492 452.167754,182.32492" id="Path" transform="translate(437.982007, 212.722949) rotate(139.000000) translate(-437.982007, -212.722949) ">
+			</path>
+			<path d="M410.47906,172.150207 C432.874578,172.150207 451.009765,154.01502 451.009765,131.619502" id="Path" transform="translate(430.744413, 151.884855) rotate(139.000000) translate(-430.744413, -151.884855) ">
+			</path>
+			<path d="M383.888525,101.030591 C406.284043,101.030591 424.41923,119.165778 424.41923,141.561296" id="Path" transform="translate(404.153878, 121.295943) rotate(139.000000) translate(-404.153878, -121.295943) ">
+			</path>
+			<line x1="314.222786" y1="341.306799" x2="500.66403" y2="341.306799" id="Path" fill="#1D1D1B" fill-rule="nonzero" transform="translate(407.443408, 341.306799) rotate(139.000000) translate(-407.443408, -341.306799) ">
+			</line>
+			<path d="M441.080108,285.295658 L441.080108,208.065431 C441.080108,192.526616 453.790303,179.915825 469.451602,179.915825" id="Path" transform="translate(455.265855, 232.605742) rotate(139.000000) translate(-455.265855, -232.605742) ">
+			</path>
+			<path d="M330.729387,75.2637297 L330.729387,107.178686 C330.729387,123.121292 343.439583,136.059788 359.100881,136.059788" id="Path" transform="translate(344.915134, 105.661759) rotate(139.000000) translate(-344.915134, -105.661759) ">
+			</path>
+			<line x1="429.599321" y1="112.858836" x2="466.076955" y2="112.858836" id="Path" transform="translate(447.838138, 112.858836) rotate(139.000000) translate(-447.838138, -112.858836) ">
+			</line>
+			<circle id="Oval" fill="#1D1D1B" fill-rule="nonzero" transform="translate(392.158748, 292.834283) rotate(139.000000) translate(-392.158748, -292.834283) " cx="392.158748" cy="292.834283" r="8.10614105">
+			</circle>
+			<circle id="Oval" fill="#1D1D1B" fill-rule="nonzero" transform="translate(335.359547, 406.653529) rotate(139.000000) translate(-335.359547, -406.653529) " cx="335.359547" cy="406.653529" r="8.10614105">
+			</circle>
+			<line x1="45.436282" y1="145.927807" x2="316.992007" y2="145.927807" id="Path" fill="#1D1D1B" fill-rule="nonzero" transform="translate(181.214145, 145.927807) rotate(139.000000) translate(-181.214145, -145.927807) ">
+			</line>
+			<path d="M301.479799,37.5628565 L301.479799,78.6231765 C301.479799,93.992123 314.189994,106.465055 329.851292,106.465055" id="Path" transform="translate(315.665545, 72.013956) rotate(139.000000) translate(-315.665545, -72.013956) ">
+			</path>
+			<line x1="123.763046" y1="68.0057834" x2="269.673585" y2="68.0057834" id="Path" fill="#1D1D1B" fill-rule="nonzero" transform="translate(196.718315, 68.005783) rotate(139.000000) translate(-196.718315, -68.005783) ">
+			</line>
+			<path d="M277.548317,-2.12637546 L277.548317,63.1222985 C277.548317,78.5630443 290.258512,91.0942466 305.919811,91.0942466" id="Path" transform="translate(291.734064, 44.483936) rotate(139.000000) translate(-291.734064, -44.483936) ">
+			</path>
+			<circle id="Oval" fill="#1D1D1B" fill-rule="nonzero" transform="translate(77.411764, 233.476654) rotate(139.000000) translate(-77.411764, -233.476654) " cx="77.4117641" cy="233.476654" r="8.10614105">
+			</circle>
+			<circle id="Oval" fill="#1D1D1B" fill-rule="nonzero" transform="translate(137.269857, 116.998355) rotate(139.000000) translate(-137.269857, -116.998355) " cx="137.269857" cy="116.998355" r="8.10614105">
+			</circle>
+			<circle id="Oval" fill="#1D1D1B" fill-rule="nonzero" transform="translate(11.435889, 355.273060) rotate(139.000000) translate(-11.435889, -355.273060) " cx="11.4358893" cy="355.27306" r="8.10614105">
+			</circle>
+		</g>
+	</g>
+</svg>

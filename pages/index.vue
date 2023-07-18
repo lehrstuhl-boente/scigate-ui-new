@@ -44,6 +44,10 @@ const engineStore = useEngineStore();
 const scrollTo = () => {
   learnMoreContainer.value.scrollIntoView({ behavior: 'smooth' });
 }
+
+definePageMeta({
+  layout: 'start'
+})
 </script>
 
 <style scoped></style>
