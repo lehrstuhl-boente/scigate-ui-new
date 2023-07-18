@@ -28,7 +28,7 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
           dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
         </p>
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <EngineCard v-for="engine in engineStore.engines" :engine="engine" />
         </div>
       </div>
