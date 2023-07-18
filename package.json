@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
+    "nuxt": "^3.2.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "pinia": "^2.0.32"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}

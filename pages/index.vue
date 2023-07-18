@@ -1,0 +1,49 @@
+<template>
+  <div class="container mx-auto px-4 mb-12">
+    <div class="flex flex-col min-h-screen">
+      <header class="flex justify-between items-center py-5">
+        <img src="/logo.svg" alt="Scigate Logo" class="w-[135px]">
+        <LanguageSwitcher />
+      </header>
+      <div class="flex-1 flex items-center justify-center max-w-5xl w-full text-center mx-auto">
+        <div>
+          <h1 class="text-3xl text-center max-w-3xl">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sed diam
+          </h1>
+          <SearchForm class="mt-10" />
+        </div>
+      </div>
+      <div class="flex justify-center mb-7">
+        <a @click="scrollTo"
+          class="flex items-center py-2 pl-3 pr-1 rounded-md hover:cursor-pointer hover:bg-gray-200 active:bg-gray-300">
+          Learn More
+          <span class="material-icons-outlined ml-1">expand_more</span>
+        </a>
+      </div>
+    </div>
+    <div ref="learnMoreContainer" class="pt-5">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl text-center my-5">Search Engines</h2>
+        <p class="max-w-3xl text-black/30 text-center mx-auto">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        </p>
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <EngineCard v-for="engine in engineStore.engines" :engine="engine" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <MainFooter />
+</template>
+
+<script lang="ts" setup>
+const learnMoreContainer = ref();
+const engineStore = useEngineStore();
+
+const scrollTo = () => {
+  learnMoreContainer.value.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+<style scoped></style>

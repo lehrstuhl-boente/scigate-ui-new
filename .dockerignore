@@ -1,0 +1,9 @@
+**/.vscode
+**/dist
+**/node_modules
+**/.git*
+**/.env*
+**/.dockerignore
+**/docker/docker-compose.yml
+**/.nuxt
+**/.output

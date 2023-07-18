@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F8F8F8];
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-title font-semibold;
+  }
+}
+
+@layer components {
+  
+}
+
+@layer utilities {
+  
+}
