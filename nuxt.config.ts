@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/i18n'],
   ssr: false,
   app: {
     head: {
@@ -34,6 +34,10 @@ export default defineNuxtConfig({
   },
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
+  },
+  i18n: {
+    locales: ['de', 'fr', 'it', 'en'],
+    defaultLocale: 'de',
   },
   tailwindcss: {
     config: {
