@@ -7,7 +7,7 @@
           <h1 class="text-3xl text-center max-w-3xl">
             {{ $t('headline') }}
           </h1>
-          <StartSearchForm class="mt-10" />
+          <SearchFormBig class="mt-10" />
         </div>
       </div>
       <div class="flex justify-center mb-7">
