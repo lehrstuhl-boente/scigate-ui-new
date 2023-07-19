@@ -5,8 +5,8 @@
       <div class="text-white uppercase">
         <NuxtLink to="/" class="hover:underline">Home</NuxtLink> |
         <NuxtLink to="/about" class="hover:underline">About</NuxtLink> |
-        <NuxtLink to="/impressum" class="hover:underline">{{ $t('imprint') }}</NuxtLink> |
-        <NuxtLink to="/datenschutz" class="hover:underline">{{ $t('privacy') }}</NuxtLink> |
+        <NuxtLink to="/imprint" class="hover:underline">{{ $t('imprint') }}</NuxtLink> |
+        <NuxtLink to="/privacy" class="hover:underline">{{ $t('privacy') }}</NuxtLink> |
         <NuxtLink to="http://v2202109132150164038.luckysrv.de/" class="hover:underline" target="_blank">
           API Docs
         </NuxtLink> |

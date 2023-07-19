@@ -14,21 +14,24 @@
   h6 {
     @apply font-title font-semibold;
   }
-  h2 {
-    @apply py-4;
-  }
-  p {
-    @apply my-2;
-  }
-  ul {
-    @apply list-disc ml-6;
-  }
-  a {
-    @apply underline hover:no-underline;
-  }
 }
 
 @layer components {
+  .markdown h1 {
+    @apply text-xl;
+  }
+  .markdown h2 {
+    @apply pt-4;
+  }
+  .markdown p {
+    @apply mt-4;
+  }
+  .markdown ul {
+    @apply list-disc ml-6;
+  }
+  .markdown a {
+    @apply underline hover:no-underline hover:opacity-70 duration-0;
+  }
 }
 
 @layer utilities {

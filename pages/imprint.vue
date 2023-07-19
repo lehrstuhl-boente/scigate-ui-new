@@ -15,7 +15,7 @@ const { locale } = useI18n();
 
 const content = ref();
 try {
-  content.value = await queryContent(`/${locale.value}/about`).findOne();
+  content.value = await queryContent(`/${locale.value}/imprint`).findOne();
 } catch (e) {
   console.error(e);
 }
