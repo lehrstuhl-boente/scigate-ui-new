@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/i18n', '@nuxt/content'],
   ssr: false,
   app: {
     head: {
@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     locales: ['de', 'fr', 'it', 'en'],
     defaultLocale: 'de',
   },
+  content: {},
   tailwindcss: {
     config: {
       content: [],
