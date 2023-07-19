@@ -64,13 +64,13 @@ export default defineNuxtConfig({
         container: {
           center: true,
           padding: '0.7rem',
-          screens: {
+          /* screens: {
             xs: '400px',
             sm: '600px',
             md: '728px',
             lg: '984px',
             xl: '1240px',
-          },
+          }, */
         },
       },
       // safelisted classes are never excluded from the bundle because they may be programmatically created or changed at runtime

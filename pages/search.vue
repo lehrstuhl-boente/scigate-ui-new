@@ -1,0 +1,74 @@
+<template>
+  asdfasdf
+  <br>
+  asdfasdf
+  asdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdfasdfasdf
+  <br>
+  asdfasdf
+</template>
+
+<script setup>
+definePageMeta({
+  layout: 'search'
+});
+</script>
