@@ -1,10 +1,7 @@
 <template>
   <div class="container mx-auto px-4 mb-12">
     <div class="flex flex-col min-h-screen">
-      <header class="flex justify-between items-center py-5">
-        <img src="/logo.svg" alt="Scigate Logo" class="w-[135px]">
-        <LanguageSwitcher />
-      </header>
+      <MainHeader />
       <div class="flex-1 flex items-center justify-center max-w-5xl w-full text-center mx-auto">
         <div>
           <h1 class="text-3xl text-center max-w-3xl">
@@ -31,7 +28,6 @@
       </div>
     </div>
   </div>
-  <MainFooter />
 </template>
 
 <script lang="ts" setup>

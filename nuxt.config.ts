@@ -39,7 +39,11 @@ export default defineNuxtConfig({
     locales: ['de', 'fr', 'it', 'en'],
     defaultLocale: 'de',
   },
-  content: {},
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
+  },
   tailwindcss: {
     config: {
       content: [],
@@ -58,7 +62,10 @@ export default defineNuxtConfig({
           title: ['Lexend', 'ui-sans'],
         },
         container: {
+          center: true,
+          padding: '0.7rem',
           screens: {
+            xs: '400px',
             sm: '600px',
             md: '728px',
             lg: '984px',
