@@ -1,6 +1,6 @@
 Scigate ist ein Showcase und One-Stop-Shop für (Rechts-)Daten. Zurzeit handelt es sich bei Scigate um einen frühen Prototyp
 
-## Datenhunger
+## I. Datenhunger
 
 Künstliche Intelligenz braucht Daten, natürliche Intelligenz auch. Gateway zu diesen Daten im weitesten Sinne war früher, nicht zuletzt wenn es um die Wissenschaft ging, vor allem die Bibliothek. Gatekeeper zu diesen Daten waren die Bibliothekarinnen und Bibliothekare, welche die Texte, die Daten mit Metadaten versahen und sie so such- und auffindbar machten.
 

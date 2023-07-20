@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/i18n', '@nuxt/content'],
   ssr: false,
+  devServer: {
+    port: 3003,
+  },
   app: {
     head: {
       title: 'Scigate – Crossrecherche',
