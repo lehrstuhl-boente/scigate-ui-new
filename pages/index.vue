@@ -23,7 +23,7 @@
         <h2 class="text-3xl text-center my-5">{{ $t('searchEngines') }}</h2>
         <p class="max-w-3xl text-black/30 text-center mx-auto">{{ $t('searchEnginesText') }}</p>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <EngineCard v-for="engine in engineStore.engines" :engine="engine" />
+          <EngineCard v-for="engine in engines" :engine="engine" />
         </div>
       </div>
     </div>
@@ -32,7 +32,8 @@
 
 <script lang="ts" setup>
 const learnMoreContainer = ref();
-const engineStore = useEngineStore();
+
+const { body: engines } = await queryContent(`engines`).findOne();
 
 const scrollTo = () => {
   learnMoreContainer.value.scrollIntoView({ behavior: 'smooth' });
