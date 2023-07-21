@@ -2,6 +2,24 @@
   {
     "id": "discipline",
     "type": "checkbox",
+    "options": ["law"]
+  },
+  {
+    "id": "language",
+    "type": "checkbox",
     "options": ["de", "fr", "it", "en"]
+  },
+  {
+    "id": "documentType",
+    "type": "checkbox",
+    "options": ["article", "book"]
+  },
+  {
+    "id": "availability",
+    "type": "switch"
+  },
+  {
+    "id": "date",
+    "type": "date"
   }
 ]

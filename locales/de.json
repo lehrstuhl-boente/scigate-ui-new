@@ -9,5 +9,20 @@
   "language": "Sprache",
   "discipline": "Fachgebiet",
   "availability": "Verfügbarkeit",
-  "documentType": "Dokumenttyp"
+  "documentType": "Dokumenttyp",
+  "filters": {
+    "discipline": {
+      "law": "Rechtswissenschaften"
+    },
+    "language": {
+      "de": "Deutsch",
+      "fr": "Französisch",
+      "it": "Italienisch",
+      "en": "Englisch"
+    },
+    "documentType": {
+      "article": "Artikel",
+      "book": "Buch"
+    }
+  }
 }

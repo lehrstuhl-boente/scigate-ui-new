@@ -9,5 +9,20 @@
   "language": "Language",
   "discipline": "Discipline",
   "availability": "Availability",
-  "documentType": "Document Type"
+  "documentType": "Document Type",
+  "filters": {
+    "discipline": {
+      "law": "Law"
+    },
+    "language": {
+      "de": "German",
+      "fr": "French",
+      "it": "Italian",
+      "en": "English"
+    },
+    "documentType": {
+      "article": "Article",
+      "book": "Book"
+    }
+  }
 }
