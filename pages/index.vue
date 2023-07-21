@@ -20,8 +20,8 @@
     </div>
     <div ref="learnMoreContainer" class="pt-5">
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl text-center my-5">{{ $t('searchEngines') }}</h2>
-        <p class="max-w-3xl text-black/30 text-center mx-auto">{{ $t('searchEnginesText') }}</p>
+        <h2 class="text-3xl text-center my-5">{{ $t('engines') }}</h2>
+        <p class="max-w-3xl text-black/30 text-center mx-auto">{{ $t('enginesText') }}</p>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <EngineCard v-for="engine in engines" :engine="engine" />
         </div>

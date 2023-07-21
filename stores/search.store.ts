@@ -8,4 +8,5 @@ export const useSearchStore = defineStore('engine-store', {
       query: '',
     };
   },
+  actions: {},
 });
