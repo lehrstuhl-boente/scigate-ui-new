@@ -1,0 +1,7 @@
+[
+  {
+    "id": "discipline",
+    "type": "checkbox",
+    "options": ["de", "fr", "it", "en"]
+  }
+]

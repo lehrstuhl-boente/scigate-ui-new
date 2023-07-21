@@ -7,7 +7,9 @@
     </div>
     <div class="h-10"></div>
     <div class="container mx-auto">
-      <slot />
+      <div class="max-w-5xl mx-auto">
+        <slot />
+      </div>
     </div>
     <div class="h-10"></div>
     <MainFooter class="mt-auto" />
