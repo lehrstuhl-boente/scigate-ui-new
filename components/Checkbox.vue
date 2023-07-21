@@ -1,10 +1,10 @@
 <template>
   <div>
-    <label class="flex hover:bg-black/5" name="">
+    <label class="flex hover:bg-black/5 px-1" :name="option">
       <input type="checkbox" class="mr-2">
       <div class="flex justify-between w-full">
         <span>
-          {{ text }}
+          {{ $t(`filters.${filterId}.${option}`) }}
         </span>
         <span v-if="count != undefined">
           ({{ count }})
@@ -15,9 +15,9 @@
 </template>
 
 <script setup>
-const { text, count, name } = defineProps({
-  name: { required: true, type: String },
-  text: { required: true, type: String },
+const { option, count, filterId } = defineProps({
+  option: { required: true, type: String },
   count: { type: Number },
+  filterId: { required: true, type: String },
 });
 </script>

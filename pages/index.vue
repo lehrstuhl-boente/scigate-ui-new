@@ -33,7 +33,7 @@
 <script lang="ts" setup>
 const learnMoreContainer = ref();
 
-const { body: engines } = await queryContent(`engines`).findOne();
+const { body: engines } = await queryContent('engines').findOne();
 
 const scrollTo = () => {
   learnMoreContainer.value.scrollIntoView({ behavior: 'smooth' });

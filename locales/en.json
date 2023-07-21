@@ -23,6 +23,7 @@
     "documentType": {
       "article": "Article",
       "book": "Book"
-    }
+    },
+    "availability": "Only show available documents"
   }
 }

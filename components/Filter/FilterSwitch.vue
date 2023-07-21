@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Checkbox v-for="option in filter.options" :option="option" :filterId="filter.id" count="0" />
+    <label>
+      {{ $t(`filters.${filter.id}`) }}
+      <input type="checkbox">
+    </label>
   </div>
 </template>
 
