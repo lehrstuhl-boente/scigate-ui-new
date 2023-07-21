@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3">
+  <div class="pr-3">
     <Filter v-for="filter in filters" :filter="filter" />
   </div>
 </template>

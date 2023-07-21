@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row gap-5">
-    <Sidebar class="md:w-1/3 bg-blue-50" />
-    <div class="md:w-2/3 bg-green-50">hitlist</div>
+    <Sidebar class="md:w-1/3" />
+    <div class="md:w-2/3">hitlist</div>
   </div>
 </template>
 

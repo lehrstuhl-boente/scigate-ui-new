@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4">
+  <div class="mb-5">
     <h3>{{ $t(filter.id) }}</h3>
     <div class="mt-2">
       <FilterCheckbox v-if="filter.type == 'checkbox'" :filter="filter" />

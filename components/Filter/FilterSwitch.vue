@@ -2,7 +2,7 @@
   <div>
     <label>
       {{ $t(`filters.${filter.id}`) }}
-      <input type="checkbox">
+      <input type="checkbox" class="pt-1">
     </label>
   </div>
 </template>
