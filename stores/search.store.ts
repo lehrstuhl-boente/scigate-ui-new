@@ -6,11 +6,6 @@ interface SearchState {
   status: 'loading' | 'ok';
 }
 
-interface ResultItem {
-  description: string[];
-  url: string;
-}
-
 interface ResponseStubs {
   filter: string;
   hitlist: ResultItem[];

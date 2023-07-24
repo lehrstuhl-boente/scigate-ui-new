@@ -1,7 +1,7 @@
 <template>
   <label class="flex hover:bg-black/5 px-1 rounded" :name="option">
     <input type="checkbox" class="mr-2">
-    <div class="flex justify-between w-full">
+    <div class="flex justify-between items-center w-full">
       <span v-if="filterId == 'engines'">
         {{ option }}
       </span>

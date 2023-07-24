@@ -1,12 +1,11 @@
 <template>
   <header class="py-5">
-    <div class="flex justify-between flex-wrap md:flex-nowrap items-center">
-      <NuxtLink to="/" class="active:scale-95">
+    <div class="md:flex justify-between md:items-center grid grid-cols-2 md:gap-12">
+      <NuxtLink to="/" class="active:scale-95 order-1">
         <img src="/logo.svg" alt="Scigate Logo" class="w-[100px]">
       </NuxtLink>
-      <SearchForm class="flex-1 mx-12 hidden md:flex" />
-      <LanguageSwitcher class="mt-1" />
+      <SearchForm class="md:flex-1 md:order-2 order-3 md:mt-0 mt-4 col-span-2" />
+      <LanguageSwitcher class="mt-1 md:order-3 order-2 justify-self-end" />
     </div>
-    <SearchForm class="flex-1 md:hidden mx-0 max-w-full mt-6" />
   </header>
 </template>
