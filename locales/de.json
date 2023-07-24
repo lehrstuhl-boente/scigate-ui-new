@@ -12,6 +12,7 @@
   "discipline": "Fachgebiet",
   "availability": "Verfügbarkeit",
   "documentType": "Dokumenttyp",
+  "noAssignment": "Ohne Zuordnung",
   "filters": {
     "discipline": {
       "law": "Rechtswissenschaften"

@@ -11,5 +11,6 @@
   "language": "Langue",
   "discipline": "Discipline",
   "availability": "Disponsibilité",
-  "documentType": "Type de document"
+  "documentType": "Type de document",
+  "noAssignment": "Sans attribution"
 }

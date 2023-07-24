@@ -1,7 +1,7 @@
 <template>
   <header class="py-5">
     <div class="flex justify-between flex-wrap md:flex-nowrap items-center">
-      <NuxtLink to="/">
+      <NuxtLink to="/" class="active:scale-95">
         <img src="/logo.svg" alt="Scigate Logo" class="w-[100px]">
       </NuxtLink>
       <SearchForm class="flex-1 mx-12 hidden md:flex" />

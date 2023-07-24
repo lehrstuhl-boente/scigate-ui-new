@@ -12,6 +12,7 @@
   "discipline": "Discipline",
   "availability": "Availability",
   "documentType": "Document Type",
+  "noAssignment": "No assignment",
   "filters": {
     "discipline": {
       "law": "Law"

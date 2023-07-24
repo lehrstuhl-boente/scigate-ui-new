@@ -5,6 +5,9 @@
       <span v-if="filterId == 'engines'">
         {{ option }}
       </span>
+      <span v-else-if="option == 'noAssignment'">
+        {{ $t(option) }}
+      </span>
       <span v-else>
         {{ $t(`filters.${filterId}.${option}`) }}
       </span>
