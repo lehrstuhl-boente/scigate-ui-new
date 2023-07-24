@@ -21,7 +21,14 @@ const submitSearch = () => {
   if (query.value == '') {
     return;
   }
-  searchStore.query = query.value;
   navigateTo('/search/?s=' + encodeURIComponent(query.value));
+  performSearch();
 }
+
+const performSearch = () => {
+  searchStore.query = query.value;
+  searchStore.search();
+}
+
+performSearch();  // on reload
 </script>

@@ -1,9 +1,13 @@
 <template>
   <div class="flex items-center">
-    <span class="mr-2">{{ $t('from') }}:</span>
-    <input type="number" placeholder="1990" min="0" class="px-2 py-1 max-w-[80px] rounded-md border">
-    <span class="mx-2">{{ $t('to') }}:</span>
-    <input type="number" placeholder="2000" min="0" class="px-2 py-1 max-w-[80px] rounded-md border">
+    <label class="mr-3">
+      <span class="mr-2">{{ $t('from') }}:</span>
+      <input type="number" placeholder="1990" class="py-1 px-2 max-w-[80px] rounded-md border">
+    </label>
+    <label>
+      <span class="mr-2">{{ $t('to') }}:</span>
+      <input type="number" placeholder="2000" class="py-1 px-2 max-w-[80px] rounded-md border">
+    </label>
   </div>
 </template>
 
