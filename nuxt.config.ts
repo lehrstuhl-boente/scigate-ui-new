@@ -54,7 +54,7 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           colors: {
-            muted: '#959595',
+            muted: '#b1b1b1',
           },
         },
         fontFamily: {
