@@ -27,7 +27,9 @@ export const useSearchStore = defineStore('engine-store', {
       this.hitlist = [];
       this.status = 'loading';
       const { body: engines } = await queryContent('engines').findOne();
-      for (let engine of engines) {
+      const enginesResults: ResultItem[][] = [];
+      let mostResults = 0;
+      for (const engine of engines) {
         const body = {
           engine: engine.id,
           term: this.query,
@@ -38,11 +40,27 @@ export const useSearchStore = defineStore('engine-store', {
           body,
           method: 'POST',
         });
-        if (data.value) {
-          this.hitlist.push(...data.value.hitlist);
+        if (data.value && data.value.hitlist.length > 0) {
+          // show the first result immediately, to avoid too long loading times
+          const resultItem = data.value.hitlist.shift();
+          if (resultItem != undefined) {
+            this.hitlist.push(resultItem);
+          }
+          enginesResults.push(data.value.hitlist);
+          mostResults = Math.max(mostResults, data.value.hitlist.length);
+        }
+      }
+      for (let i = 0; i < mostResults; i++) {
+        // always take the first one result (round robin)
+        for (const engineResults of enginesResults) {
+          const resultItem = engineResults.shift();
+          if (resultItem != undefined) {
+            this.hitlist.push(resultItem);
+          }
         }
       }
       this.status = 'ok';
     },
+    async loadMore() {},
   },
 });
