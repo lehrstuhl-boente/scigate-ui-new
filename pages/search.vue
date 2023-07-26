@@ -8,10 +8,6 @@
       <div class="flex justify-center" v-if="searchStore.status == 'loading'">
         <LoadingSpinner />
       </div>
-      <button v-else class="bg-black text-white hover:bg-black/80 active:bg-black/70 py-1 px-2 rounded text-sm"
-        @click="loadMore">
-        Load More
-      </button>
     </div>
   </div>
 </template>
@@ -23,7 +19,21 @@ definePageMeta({
 
 const searchStore = useSearchStore();
 
-const loadMore = () => {
-  searchStore.loadResults();
+const handleScroll = () => {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  if (window.scrollY >= (scrollableHeight - 50)) {
+    if (searchStore.status != 'loading' && !searchStore.allResultsLoaded) {
+      searchStore.loadResults();
+      console.log('asdf');
+    }
+  }
 };
+
+// automatically load results when scrolled to bottom
+window.addEventListener('scroll', handleScroll);
+
+onUnmounted(() => {
+  console.log('unmount');
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
