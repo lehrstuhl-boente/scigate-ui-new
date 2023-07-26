@@ -27,8 +27,10 @@ const submitSearch = () => {
 
 const performSearch = () => {
   searchStore.query = query.value;
-  searchStore.search();
+  searchStore.initialLoadResults();
 }
 
-performSearch();  // on reload
+if (searchStore.query !== '') {
+  performSearch();  // on reload
+}
 </script>

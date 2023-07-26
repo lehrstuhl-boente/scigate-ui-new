@@ -8,6 +8,10 @@
       <div class="flex justify-center" v-if="searchStore.status == 'loading'">
         <LoadingSpinner />
       </div>
+      <button v-else class="bg-black text-white hover:bg-black/80 active:bg-black/70 py-1 px-2 rounded text-sm"
+        @click="loadMore">
+        Load More
+      </button>
     </div>
   </div>
 </template>
@@ -18,4 +22,8 @@ definePageMeta({
 });
 
 const searchStore = useSearchStore();
+
+const loadMore = () => {
+  searchStore.loadResults();
+};
 </script>
