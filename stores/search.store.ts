@@ -7,12 +7,17 @@ interface SearchState {
   status: 'loading' | 'ok';
 }
 
-interface ResponseStubs {
+interface ResponseHitlist {
   filter: string;
   hitlist: ResultItem[];
   searchterm: string;
   start: number;
   status: string;
+}
+
+interface ResponseSearch {
+  status: string;
+  hits: number;
 }
 
 export const useSearchStore = defineStore('engine-store', {
@@ -43,6 +48,19 @@ export const useSearchStore = defineStore('engine-store', {
         engine.allResultsLoaded = false;
         engine.resultsCount = 0;
       });
+      this.engines.forEach(async (engine) => {
+        const body = {
+          engine: engine.id,
+          term: this.query,
+          type: 'search',
+        };
+        const res = await $fetch<ResponseSearch>('/stubs', {
+          baseURL: config.public.baseURL,
+          body,
+          method: 'POST',
+        });
+        engine.totalResultsCount = res.hits;
+      });
       this.loadResults();
     },
     // directly called when loading more results
@@ -59,7 +77,7 @@ export const useSearchStore = defineStore('engine-store', {
           type: 'hitlist',
           start: engine.resultsCount,
         };
-        const { data } = await useFetch<ResponseStubs>('/stubs', {
+        const { data } = await useFetch<ResponseHitlist>('/stubs', {
           baseURL: config.public.baseURL,
           body,
           method: 'POST',
