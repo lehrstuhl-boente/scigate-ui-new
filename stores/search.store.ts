@@ -20,7 +20,7 @@ interface ResponseSearch {
   hits: number;
 }
 
-export const useSearchStore = defineStore('engine-store', {
+export const useSearchStore = defineStore('search-store', {
   state: (): SearchState => {
     return {
       query: '',

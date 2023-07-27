@@ -5,6 +5,6 @@
   </div>
 </template>
 
-<script setup>
-const { filter } = defineProps({ filter: { required: true, type: Object } });
+<script lang="ts" setup>
+const { filter } = defineProps<{ filter: FilterCheckbox }>();
 </script>

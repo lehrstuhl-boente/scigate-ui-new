@@ -1,0 +1,1 @@
+interface FilterSwitch extends Filter {}

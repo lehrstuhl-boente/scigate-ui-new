@@ -1,0 +1,1 @@
+interface FilterDate extends Filter {}
