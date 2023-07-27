@@ -2,17 +2,17 @@
   {
     "id": "discipline",
     "type": "checkbox",
-    "options": ["law"]
+    "options": ["noAssignment", "law"]
   },
   {
     "id": "language",
     "type": "checkbox",
-    "options": ["de", "fr", "it", "en"]
+    "options": ["noAssignment", "de", "fr", "it", "en"]
   },
   {
     "id": "documentType",
     "type": "checkbox",
-    "options": ["article", "book"]
+    "options": ["noAssignment", "article", "book"]
   },
   {
     "id": "availability",

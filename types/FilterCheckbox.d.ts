@@ -1,3 +1,9 @@
 interface FilterCheckbox extends Filter {
-  options: string[];
+  options: Option[];
+}
+
+interface Option {
+  name: string;
+  count: number;
+  checked: boolean;
 }

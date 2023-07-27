@@ -5,23 +5,16 @@
       <span v-if="filterId == 'engines'">
         {{ option }}
       </span>
-      <span v-else-if="option == 'noAssignment'">
-        {{ $t(option) }}
+      <span v-else-if="option.name == 'noAssignment'">
+        {{ $t('noAssignment') }}
       </span>
       <span v-else>
         {{ $t(`filters.${filterId}.${option}`) }}
-      </span>
-      <span v-if="count != undefined">
-        ({{ count }})
       </span>
     </div>
   </label>
 </template>
 
-<script setup>
-const { option, count, filterId } = defineProps({
-  option: { required: true, type: String },
-  count: { type: Number },
-  filterId: { required: true, type: String },
-});
+<script lang="ts" setup>
+const { option, filterId } = defineProps<{ option: Option, filterId: string }>();
 </script>

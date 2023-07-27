@@ -1,1 +1,3 @@
-interface FilterSwitch extends Filter {}
+interface FilterSwitch extends Filter {
+  active: boolean;
+}

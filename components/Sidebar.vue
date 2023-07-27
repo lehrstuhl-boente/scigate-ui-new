@@ -1,12 +1,13 @@
 <template>
   <div class="pr-3">
-    <Filter v-for="filter in filters" :filter="filter" />
+    <Filter v-for="filter in filterStore.filters" :filter="filter" />
     <Filter :filter="enginesFilter" />
   </div>
 </template>
 
 <script setup>
-const { body: filters } = await queryContent('filters').findOne();
+const filterStore = useFilterStore();
+
 const { body: engines } = await queryContent('engines').findOne();
 
 // convert engine store to filter object

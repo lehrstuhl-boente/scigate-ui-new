@@ -18,6 +18,9 @@ definePageMeta({
 });
 
 const searchStore = useSearchStore();
+const filterStore = useFilterStore();
+
+await filterStore.initializeFilters();
 
 const handleScroll = () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -33,7 +36,6 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll);
 
 onUnmounted(() => {
-  console.log('unmount');
   window.removeEventListener('scroll', handleScroll);
 });
 </script>

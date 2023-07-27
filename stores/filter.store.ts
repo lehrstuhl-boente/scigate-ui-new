@@ -1,16 +1,33 @@
 interface FilterState {
-  dateFilters: FilterDate[];
-  checkboxFilters: FilterCheckbox[];
-  switchFilters: FilterSwitch[];
+  filters: Filter[];
 }
 
 export const useFilterStore = defineStore('filter-store', {
   state: (): FilterState => {
     return {
-      dateFilters: [],
-      checkboxFilters: [],
-      switchFilters: [],
+      filters: [],
     };
   },
-  actions: {},
+  actions: {
+    async initializeFilters() {
+      const { body: filters } = await queryContent<{ body: Filter[] }>('filters').findOne();
+      for (const filter of filters) {
+        if (filter.type == 'checkbox') {
+          let tmpOptions: Option[] = [];
+          const tmpCheckboxFilter = filter as { options: string[] } & Filter;
+          const checkboxFilter = filter as FilterCheckbox;
+          for (const optionName of tmpCheckboxFilter.options) {
+            tmpOptions.push({
+              name: optionName,
+              count: 0,
+              checked: false,
+            });
+          }
+          checkboxFilter.options = tmpOptions;
+          console.log(checkboxFilter);
+        }
+      }
+      this.filters = filters;
+    },
+  },
 });
