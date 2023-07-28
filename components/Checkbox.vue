@@ -22,6 +22,6 @@ const { option, filterId } = defineProps<{ option: Option, filterId: string }>()
 
 let engine: Engine;
 if (filterId == 'engines') {
-  engine = getObjectWithSubObject<Engine>(searchStore.engines, { id: option.name });
+  engine = getObject<Engine>(searchStore.engines, { id: option.name });
 }
 </script>

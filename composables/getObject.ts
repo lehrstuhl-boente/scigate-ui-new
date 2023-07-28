@@ -1,5 +1,5 @@
 // returns the object from object list that includes the subobject
-export const getObjectWithSubObject = <T>(objectList: T[], subObject: Object): T => {
+export const getObject = <T>(objectList: T[], subObject: Object): T => {
   for (const object of objectList) {
     if (isSubObject(object, subObject)) return object;
   }

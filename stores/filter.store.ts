@@ -41,13 +41,7 @@ export const useFilterStore = defineStore('filter-store', {
       filters.push(enginesFilter);
       this.filters = filters;
     },
-    noCheckboxChecked(filter: FilterCheckbox) {
-      if (filter.type != 'checkbox') {
-        throw Error('Can only call method on filter of type checkbox');
-      }
-      for (const option of filter.options) {
-        if (option.checked) return true;
-      }
+    noCheckboxChecked(filterId: string) {
       return false;
     },
   },
