@@ -11,6 +11,7 @@ export const useFilterStore = defineStore('filter-store', {
   actions: {
     async initializeFilters() {
       const { body: filters } = await queryContent<{ body: Filter[] }>('filters').findOne();
+      // make filter options right shape
       for (const filter of filters) {
         if (filter.type == 'checkbox') {
           let tmpOptions: Option[] = [];
@@ -24,9 +25,20 @@ export const useFilterStore = defineStore('filter-store', {
             });
           }
           checkboxFilter.options = tmpOptions;
-          console.log(checkboxFilter);
         }
       }
+      // add engines to filter
+      const { body: engines } = await queryContent<{ body: Engine[] }>('engines').findOne();
+      const tmpEnginesOptions: Option[] = [];
+      for (const engine of engines) {
+        tmpEnginesOptions.push({ name: engine.id, checked: false, count: 0 });
+      }
+      const enginesFilter: FilterCheckbox = {
+        id: 'engines',
+        type: 'checkbox',
+        options: tmpEnginesOptions,
+      };
+      filters.push(enginesFilter);
       this.filters = filters;
     },
   },
