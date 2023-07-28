@@ -1,5 +1,4 @@
-interface StoreEngine {
-  id: string;
+interface StoreEngine extends Engine {
   allResultsLoaded: boolean;
   resultsCount: number;
   totalResultsCount: number;
