@@ -47,6 +47,7 @@ export const useSearchStore = defineStore('search-store', {
       this.engines.forEach((engine) => {
         engine.allResultsLoaded = false;
         engine.resultsCount = 0;
+        engine.checked = false;
       });
       this.engines.forEach(async (engine) => {
         const body = {

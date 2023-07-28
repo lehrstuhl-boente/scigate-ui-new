@@ -27,7 +27,6 @@ const handleScroll = () => {
   if (window.scrollY >= (scrollableHeight - 50)) {
     if (searchStore.status != 'loading' && !searchStore.allResultsLoaded) {
       searchStore.loadResults();
-      console.log('asdf');
     }
   }
 };
