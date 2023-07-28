@@ -37,11 +37,16 @@ export const useSearchStore = defineStore('search-store', {
       }
       return true;
     },
+    // whether all engines have checked=false --> same as all checked=true
+    allEnginesUnchecked(state) {
+      for (const engine of state.engines) {
+        if (engine.checked) return false;
+      }
+      return true;
+    },
   },
   actions: {
-    // called the first time
-    async initialLoadResults() {
-      this.hitlist = [];
+    async initializeEngines() {
       const { body: engines } = await queryContent('engines').only('body').findOne();
       this.engines = engines;
       this.engines.forEach((engine) => {
@@ -49,6 +54,10 @@ export const useSearchStore = defineStore('search-store', {
         engine.resultsCount = 0;
         engine.checked = false;
       });
+    },
+    // called the first time
+    async initialLoadResults() {
+      this.hitlist = [];
       this.engines.forEach(async (engine) => {
         const body = {
           engine: engine.id,
@@ -71,6 +80,7 @@ export const useSearchStore = defineStore('search-store', {
       let mostResults = 0;
       // collect the results of all engines
       for (const engine of this.engines) {
+        if (!this.allEnginesUnchecked && !engine.checked) continue;
         if (engine.allResultsLoaded) continue;
         const body = {
           engine: engine.id,

@@ -30,6 +30,8 @@ const performSearch = () => {
   searchStore.initialLoadResults();
 }
 
+await searchStore.initializeEngines();
+
 if (searchStore.query !== '') {
   performSearch();  // on reload
 }
