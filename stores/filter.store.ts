@@ -27,18 +27,6 @@ export const useFilterStore = defineStore('filter-store', {
           checkboxFilter.options = tmpOptions;
         }
       }
-      // add engines to filter
-      /* const { body: engines } = await queryContent<{ body: Engine[] }>('engines').findOne();
-      const tmpEnginesOptions: Option[] = [];
-      for (const engine of engines) {
-        tmpEnginesOptions.push({ name: engine.id, checked: false, count: 0 });
-      }
-      const enginesFilter: FilterCheckbox = {
-        id: 'engines',
-        type: 'checkbox',
-        options: tmpEnginesOptions,
-      };
-      filters.push(enginesFilter); */
       this.filters = filters;
     },
     noCheckboxChecked(filterId: string) {

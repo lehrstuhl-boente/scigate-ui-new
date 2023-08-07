@@ -20,7 +20,9 @@ definePageMeta({
 const searchStore = useSearchStore();
 const filterStore = useFilterStore();
 
-await filterStore.initializeFilters();
+if (filterStore.filters.length == 0) {
+  await filterStore.initializeFilters();
+}
 
 const handleScroll = () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;

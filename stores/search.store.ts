@@ -75,6 +75,7 @@ export const useSearchStore = defineStore('search-store', {
     },
     // directly called when loading more results
     async loadResults() {
+      if (this.query == '') return;
       this.status = 'loading';
       const enginesResults: ResultItem[][] = [];
       let mostResults = 0;
@@ -124,4 +125,5 @@ export const useSearchStore = defineStore('search-store', {
       this.status = 'ok';
     },
   },
+  //persist: true,
 });
