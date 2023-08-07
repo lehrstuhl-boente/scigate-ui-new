@@ -1,5 +1,5 @@
 <template>
-  <label class="flex hover:bg-black/5 px-1 rounded" :name="option">
+  <label class="flex items-center hover:bg-black/5 px-1 rounded" :name="option">
     <input type="checkbox" class="mr-2" v-model="option.checked">
     <div class="flex justify-between items-center w-full">
       <span v-if="option.name == 'noAssignment'">

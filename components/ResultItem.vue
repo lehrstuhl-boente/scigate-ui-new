@@ -1,6 +1,6 @@
 <template>
   <div class="p-3 bg-white mb-8 rounded-lg shadow-md relative">
-    <span class="py-1 px-2 bg-white text-xs border rounded-md absolute right-2 -top-5">{{ engineName }}</span>
+    <span class="py-1 px-2 bg-white text-xs border rounded-md absolute right-3 -top-5">{{ engineName }}</span>
     <a :href="item.url" class="hover:underline" target="_blank">
       <h2>{{ item.description[0] }}</h2>
     </a>
