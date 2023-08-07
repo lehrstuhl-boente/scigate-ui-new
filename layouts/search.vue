@@ -12,6 +12,6 @@
       </div>
     </div>
     <div class="h-10"></div>
-    <MainFooter class="mt-auto" />
+    <MainFooter class="fixed mt-auto bottom-0 w-full" />
   </div>
 </template>

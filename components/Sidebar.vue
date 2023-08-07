@@ -1,5 +1,5 @@
 <template>
-  <div class="pr-3">
+  <div class="pr-3 md:mb-10">
     <Filter v-for="filter in filterStore.filters" :filter="filter" />
     <FilterEngine />
   </div>
