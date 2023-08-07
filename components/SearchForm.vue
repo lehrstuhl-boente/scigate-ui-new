@@ -19,26 +19,7 @@ const query = ref(searchStore.query);
 
 const submitSearch = () => {
   if (query.value == '') return;
-  navigateTo('/search/?s=' + encodeURIComponent(query.value));
-  performSearch();
-}
-
-const performSearch = () => {
   searchStore.query = query.value;
-  searchStore.initialLoadResults();
-}
-
-const searchStoreData = localStorage.getItem('search-store');
-if (searchStoreData !== null) {
-  searchStore.$patch(JSON.parse(searchStoreData));
-} else {
-  await searchStore.initializeEngines();
-}
-searchStore.$subscribe((mutation, state) => { // always save the store state to localstorage so that it remains after refresh
-  localStorage.setItem('search-store', JSON.stringify(state));
-});
-
-if (searchStore.query !== '') {
-  performSearch();  // on reload
+  searchStore.status = 'newSearch';
 }
 </script>

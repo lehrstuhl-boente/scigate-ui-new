@@ -29,8 +29,5 @@ export const useFilterStore = defineStore('filter-store', {
       }
       this.filters = filters;
     },
-    noCheckboxChecked(filterId: string) {
-      return false;
-    },
   },
 });

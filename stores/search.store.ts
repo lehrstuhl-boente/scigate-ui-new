@@ -4,7 +4,7 @@ interface SearchState {
   engines: StoreEngine[];
   query: string;
   hitlist: ResultItem[];
-  status: 'loading' | 'ok';
+  status: 'loading' | 'ok' | 'newSearch';
 }
 
 interface ResponseHitlist {
@@ -63,6 +63,7 @@ export const useSearchStore = defineStore('search-store', {
           engine: engine.id,
           term: this.query,
           type: 'search',
+          filters: useFilterStore().filters,
         };
         const res = await $fetch<ResponseSearch>('/stubs', {
           baseURL: config.public.baseURL,
@@ -70,6 +71,7 @@ export const useSearchStore = defineStore('search-store', {
           method: 'POST',
         });
         engine.totalResultsCount = res.hits;
+        engine.allResultsLoaded = false;
       });
       this.loadResults();
     },
@@ -88,6 +90,7 @@ export const useSearchStore = defineStore('search-store', {
           term: this.query,
           type: 'hitlist',
           start: engine.resultsCount,
+          filters: useFilterStore().filters,
         };
         const { data } = await useFetch<ResponseHitlist>('/stubs', {
           baseURL: config.public.baseURL,
@@ -125,5 +128,4 @@ export const useSearchStore = defineStore('search-store', {
       this.status = 'ok';
     },
   },
-  //persist: true,
 });
