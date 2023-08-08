@@ -2,9 +2,10 @@
   <div class="flex flex-col md:flex-row gap-5">
     <Sidebar class="md:w-1/3" />
     <div class="md:w-2/3">
-      <div>
+      <div v-if="searchStore.hitlist.length !== 0">
         <ResultItem v-for="item in searchStore.hitlist" :item="item" />
       </div>
+      <div v-else-if="searchStore.status != 'loading'" class="text-center text-sm text-muted">{{ $t('noResults') }}</div>
       <div class="flex justify-center mb-7" v-if="searchStore.status == 'loading'">
         <LoadingSpinner />
       </div>
@@ -20,12 +21,7 @@ definePageMeta({
 const searchStore = useSearchStore();
 const filterStore = useFilterStore();
 
-const searchStoreData = localStorage.getItem('search-store');
-if (searchStoreData !== null) {
-  searchStore.$patch(JSON.parse(searchStoreData));
-} else {
-  await searchStore.initializeEngines();
-}
+await searchStore.initializeEngines();
 
 if (filterStore.filters.length == 0) {
   await filterStore.initializeFilters();
@@ -36,7 +32,6 @@ if (searchStore.query !== '') {
 }
 
 searchStore.$subscribe((mutation, state) => {
-  localStorage.setItem('search-store', JSON.stringify(state));
   if (state.status == 'newSearch') {
     state.status = 'ok';
     navigateTo('/search/?s=' + encodeURIComponent(searchStore.query));

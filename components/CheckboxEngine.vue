@@ -9,4 +9,9 @@
 
 <script lang="ts" setup>
 const { engine } = defineProps<{ engine: StoreEngine }>();
+
+// save state of checkbox to localstorage in order to preserve it after page refresh
+watch(engine, (newEngine, oldEngine) => {
+  localStorage.setItem('filter.engines.' + engine.id, newEngine.checked.toString());
+});
 </script>

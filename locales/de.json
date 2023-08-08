@@ -13,6 +13,7 @@
   "availability": "Verfügbarkeit",
   "documentType": "Dokumenttyp",
   "noAssignment": "Ohne Zuordnung",
+  "noResults": "Keine Resultate gefunden.",
   "filters": {
     "discipline": {
       "law": "Rechtswissenschaften"

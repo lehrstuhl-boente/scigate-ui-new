@@ -12,5 +12,6 @@
   "discipline": "Disciplina",
   "availability": "Disponsibilità",
   "documentType": "Tipo di documento",
-  "noAssignment": "Senza incario"
+  "noAssignment": "Senza incario",
+  "noResults": "Nessun risultato trovato."
 }

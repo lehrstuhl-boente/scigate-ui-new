@@ -52,13 +52,19 @@ export const useSearchStore = defineStore('search-store', {
       this.engines.forEach((engine) => {
         engine.allResultsLoaded = false;
         engine.resultsCount = 0;
-        engine.checked = false;
+        if (localStorage.getItem('filter.engines.' + engine.id) === 'true') {
+          engine.checked = true;
+        } else {
+          engine.checked = false;
+        }
       });
     },
     // called the first time
     async initialLoadResults() {
       this.hitlist = [];
       this.engines.forEach(async (engine) => {
+        engine.allResultsLoaded = false;
+        engine.resultsCount = 0;
         const body = {
           engine: engine.id,
           term: this.query,
@@ -71,7 +77,6 @@ export const useSearchStore = defineStore('search-store', {
           method: 'POST',
         });
         engine.totalResultsCount = res.hits;
-        engine.allResultsLoaded = false;
       });
       this.loadResults();
     },

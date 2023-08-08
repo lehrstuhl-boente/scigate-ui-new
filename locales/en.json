@@ -13,6 +13,7 @@
   "availability": "Availability",
   "documentType": "Document Type",
   "noAssignment": "No assignment",
+  "noResults": "No results found.",
   "filters": {
     "discipline": {
       "law": "Law"
