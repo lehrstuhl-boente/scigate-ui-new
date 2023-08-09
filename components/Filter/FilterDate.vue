@@ -14,6 +14,8 @@
 <script lang="ts" setup>
 const { filter } = defineProps<{ filter: FilterDate }>();
 
+const filterStore = useFilterStore();
+
 const from = ref(localStorage.getItem('filter.date.from'));
 const to = ref(localStorage.getItem('filter.date.to'));
 
@@ -24,4 +26,9 @@ watch(from, (newValue, oldValue) => {
 watch(to, (newValue, oldValue) => {
   if (newValue != null) localStorage.setItem('filter.date.to', newValue);
 });
+
+
+/* const storeFilter = getObject<FilterDate>((filterStore.filters as FilterDate[]), { id: filter.id });
+
+console.log(storeFilter) */
 </script>
