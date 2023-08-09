@@ -23,10 +23,6 @@ const filterStore = useFilterStore();
 
 await searchStore.initializeEngines();
 
-if (filterStore.filters.length == 0) {
-  await filterStore.initializeFilters();
-}
-
 if (searchStore.query !== '') {
   searchStore.initialLoadResults();
 }
