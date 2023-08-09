@@ -18,10 +18,14 @@ export const useFilterStore = defineStore('filter-store', {
           const tmpCheckboxFilter = filter as { options: string[] } & Filter;
           const checkboxFilter = filter as FilterCheckbox;
           for (const optionName of tmpCheckboxFilter.options) {
+            let checked = false;
+            if (localStorage.getItem(`filter.${filter.id}.${optionName}`) === 'true') {
+              checked = true;
+            }
             tmpOptions.push({
               name: optionName,
               count: 0,
-              checked: false,
+              checked,
             });
           }
           checkboxFilter.options = tmpOptions;

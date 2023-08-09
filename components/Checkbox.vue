@@ -14,4 +14,9 @@
 
 <script lang="ts" setup>
 const { option, filterId } = defineProps<{ option: Option, filterId: string }>();
+
+// save state of checkbox to localstorage in order to preserve it after page refresh
+watch(option, (newOption, oldOption) => {
+  localStorage.setItem(`filter.${filterId}.${option.name}`, newOption.checked.toString());
+});
 </script>
