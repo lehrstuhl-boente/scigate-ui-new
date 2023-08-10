@@ -80,14 +80,15 @@ export const useSearchStore = defineStore('search-store', {
       });
       this.loadResults();
     },
-    // directly called when loading more results
+    // directly called (not via initialLoadResults) when loading more results
     async loadResults() {
       if (this.query == '') return;
       this.status = 'loading';
+      const enginesPromises = [];
       const enginesResults: ResultItem[][] = [];
       let mostResults = 0;
       // collect the results of all engines
-      for (const engine of this.engines) {
+      for (const [index, engine] of this.engines.entries()) {
         if (!this.allEnginesUnchecked && !engine.checked) continue;
         if (engine.allResultsLoaded) continue;
         const body = {
@@ -97,30 +98,36 @@ export const useSearchStore = defineStore('search-store', {
           start: engine.resultsCount,
           filters: useFilterStore().filters,
         };
-        const { data } = await useFetch<ResponseHitlist>('/stubs', {
-          baseURL: config.public.baseURL,
-          body,
-          method: 'POST',
-        });
-        if (data.value && data.value.hitlist) {
-          if (data.value.hitlist.length > 0) {
-            engine.resultsCount += data.value.hitlist.length;
-            // show the first result of every engine immediately, to avoid long loading times
-            const resultItem = data.value.hitlist.shift();
-            if (resultItem != undefined) {
-              this.hitlist.push(resultItem);
+        const enginePromise = new Promise<void>((resolve, reject) => {
+          $fetch<ResponseHitlist>('/stubs', {
+            baseURL: config.public.baseURL,
+            body,
+            method: 'POST',
+          }).then((data) => {
+            if (data && data.hitlist) {
+              if (data.hitlist.length > 0) {
+                engine.resultsCount += data.hitlist.length;
+                // show the first result of every engine immediately, to avoid long loading times
+                const resultItem = data.hitlist.shift();
+                if (resultItem != undefined) {
+                  this.hitlist.push(resultItem);
+                }
+                enginesResults.push(data.hitlist);
+                mostResults = Math.max(mostResults, data.hitlist.length);
+              } else {
+                // empty hitlist because no results for search term and filters
+                engine.allResultsLoaded = true;
+              }
+            } else {
+              // error because already everything loaded
+              engine.allResultsLoaded = true;
             }
-            enginesResults.push(data.value.hitlist);
-            mostResults = Math.max(mostResults, data.value.hitlist.length);
-          } else {
-            // empty hitlist because no results for search term and filters
-            engine.allResultsLoaded = true;
-          }
-        } else {
-          // error because already everything loaded
-          engine.allResultsLoaded = true;
-        }
+            resolve();
+          });
+        });
+        enginesPromises.push(enginePromise);
       }
+      await Promise.all(enginesPromises);
       // write always the first result of every engine to the hitlist (round robin?)
       for (let i = 0; i < mostResults; i++) {
         for (const engineResults of enginesResults) {
