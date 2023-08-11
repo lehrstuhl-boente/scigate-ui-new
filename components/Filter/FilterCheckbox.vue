@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button class="px-1 rounded-md text-xs mb-2 hover:opacity-70">{{ $t('selectAll') }}</button>
     <Checkbox v-for="option in storeFilter.options" :option="option" :filterId="filter.id" />
   </div>
 </template>

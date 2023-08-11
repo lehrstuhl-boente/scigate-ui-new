@@ -14,6 +14,8 @@
   "documentType": "Dokumenttyp",
   "noAssignment": "Ohne Zuordnung",
   "noResults": "Keine Resultate gefunden.",
+  "selectAll": "Alle auswählen",
+  "deselectAll": "Alle abwählen",
   "filters": {
     "discipline": {
       "law": "Rechtswissenschaften"

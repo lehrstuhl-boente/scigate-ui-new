@@ -13,5 +13,7 @@
   "availability": "Disponsibilità",
   "documentType": "Tipo di documento",
   "noAssignment": "Senza incario",
-  "noResults": "Nessun risultato trovato."
+  "noResults": "Nessun risultato trovato.",
+  "selectAll": "Selezionare tutti",
+  "deselectAll": "Deselezionare tutti"
 }

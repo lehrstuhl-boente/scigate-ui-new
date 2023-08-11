@@ -14,6 +14,8 @@
   "documentType": "Document Type",
   "noAssignment": "No assignment",
   "noResults": "No results found.",
+  "selectAll": "Select all",
+  "deselectAll": "Deselect all",
   "filters": {
     "discipline": {
       "law": "Law"
