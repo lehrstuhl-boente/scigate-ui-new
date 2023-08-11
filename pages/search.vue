@@ -7,7 +7,7 @@
       </div>
       <div v-else-if="searchStore.status != 'loading'" class="text-center text-sm text-muted">{{ $t('noResults') }}</div>
       <div class="flex justify-center mb-7" v-if="searchStore.status == 'loading'">
-        <LoadingSpinner />
+        <LoadingSpinner class="scale-50" />
       </div>
     </div>
   </div>

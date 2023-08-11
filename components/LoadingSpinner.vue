@@ -13,7 +13,6 @@
   position: relative;
   width: 80px;
   height: 80px;
-  transform: scale(0.5);
   opacity: 0.4;
 }
 
