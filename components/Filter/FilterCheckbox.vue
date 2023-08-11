@@ -1,12 +1,6 @@
 <template>
   <div>
-    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" @click="setAllOptions(true)"
-      v-if="!allOptionsChecked">
-      {{ $t('selectAll') }}
-    </button>
-    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" @click="setAllOptions(false)" v-else>
-      {{ $t('deselectAll') }}
-    </button>
+    <CheckboxSelection :options="storeFilter.options" />
     <Checkbox v-for="option in storeFilter.options" :option="option" :filterId="filter.id" />
   </div>
 </template>
@@ -38,27 +32,4 @@ filterClone.options = tmpOptions
 filterStore.addFilter(filterClone);
 // read filter object from store again in order to use it as prop for Checkbox (only that way it's reactive)
 const storeFilter = filterStore.getFilterById<FilterCheckbox>(filter.id);
-
-const allOptionsChecked = ref(true);
-
-const checkIfAllOptionsChecked = (options: Option[]) => {
-  for (const option of options) {
-    if (!option.checked) {
-      allOptionsChecked.value = false;
-      return;
-    }
-  }
-  allOptionsChecked.value = true;
-}
-checkIfAllOptionsChecked(storeFilter.options); // on reload
-
-watch(storeFilter.options, (newOptions, oldOptions) => {  // on 
-  checkIfAllOptionsChecked(newOptions);
-});
-
-const setAllOptions = (value: boolean) => {
-  for (const option of storeFilter.options) {
-    option.checked = value;
-  }
-}
 </script>
