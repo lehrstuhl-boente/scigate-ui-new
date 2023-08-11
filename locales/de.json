@@ -30,6 +30,10 @@
       "article": "Artikel",
       "book": "Buch"
     },
-    "availability": "Nur verfügbare Dokumente anzeigen"
+    "availability": {
+      "freeOnlineAvailable": "Frei online verfügbar",
+      "restrictedOnlineAvailable": "Beschränkt online verfügbar",
+      "notOnlineAvailable": "Nicht online verfügbar"
+    }
   }
 }

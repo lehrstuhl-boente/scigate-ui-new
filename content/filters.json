@@ -10,13 +10,9 @@
     "options": ["noAssignment", "de", "fr", "it", "en"]
   },
   {
-    "id": "documentType",
-    "type": "checkbox",
-    "options": ["noAssignment", "article", "book"]
-  },
-  {
     "id": "availability",
-    "type": "switch"
+    "type": "checkbox",
+    "options": ["noAssignment", "freeOnlineAvailable", "restrictedOnlineAvailable", "notOnlineAvailable"]
   },
   {
     "id": "date",
