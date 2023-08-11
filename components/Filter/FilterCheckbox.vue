@@ -1,9 +1,10 @@
 <template>
   <div>
-    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" v-if="!allOptionsChecked">
+    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" @click="setAllOptions(true)"
+      v-if="!allOptionsChecked">
       {{ $t('selectAll') }}
     </button>
-    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" v-else>
+    <button class="mx-1 rounded-md text-xs mb-2 hover:opacity-70 active:opacity-50" @click="setAllOptions(false)" v-else>
       {{ $t('deselectAll') }}
     </button>
     <Checkbox v-for="option in storeFilter.options" :option="option" :filterId="filter.id" />
@@ -54,4 +55,10 @@ checkIfAllOptionsChecked(storeFilter.options); // on reload
 watch(storeFilter.options, (newOptions, oldOptions) => {  // on 
   checkIfAllOptionsChecked(newOptions);
 });
+
+const setAllOptions = (value: boolean) => {
+  for (const option of storeFilter.options) {
+    option.checked = value;
+  }
+}
 </script>
