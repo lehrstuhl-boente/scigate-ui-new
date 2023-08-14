@@ -3,4 +3,5 @@ interface StoreEngine extends Engine {
   resultsCount: number;
   totalResultsCount: number;
   checked: boolean;
+  loading: boolean;
 }

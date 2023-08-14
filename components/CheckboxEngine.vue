@@ -4,10 +4,10 @@
     <input type="checkbox" class="mr-2" v-model="engine.checked">
     <div class="flex justify-between items-center w-full">
       <span>{{ engine.title }}</span>
-      <span class="text-sm" v-if="engine.totalResultsCount !== undefined">
+      <span class="text-sm" v-if="!engine.loading">
         ({{ engine.totalResultsCount }})
       </span>
-      <span v-else>…</span>
+      <LoadingSpinnerSmall v-else />
     </div>
   </label>
 </template>

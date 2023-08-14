@@ -52,6 +52,7 @@ export const useSearchStore = defineStore('search-store', {
       this.engines.forEach((engine) => {
         engine.allResultsLoaded = false;
         engine.resultsCount = 0;
+        engine.loading = false;
         if (localStorage.getItem('filter.engines.' + engine.id) === 'true') {
           engine.checked = true;
         } else {
@@ -71,11 +72,13 @@ export const useSearchStore = defineStore('search-store', {
           type: 'search',
           filters: useFilterStore().filters,
         };
+        engine.loading = true;
         const res = await $fetch<ResponseSearch>('/stubs', {
           baseURL: config.public.baseURL,
           body,
           method: 'POST',
         });
+        engine.loading = false;
         engine.totalResultsCount = res.hits;
       });
       this.loadResults();
