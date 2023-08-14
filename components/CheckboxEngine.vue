@@ -1,6 +1,5 @@
 <template>
-  <label class="flex items-center hover:bg-black/5 px-1 rounded"
-    :class="{ 'opacity-40 hover:bg-inherit pointer-events-none': engine.totalResultsCount === 0 }" :name="engine.id">
+  <label class="flex items-center hover:bg-black/5 px-1 rounded" :name="engine.id">
     <input type="checkbox" class="mr-2" v-model="engine.checked" @change="onCheckboxChange">
     <div class="flex justify-between items-center w-full">
       <span>{{ engine.title }}</span>
