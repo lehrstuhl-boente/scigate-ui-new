@@ -16,6 +16,7 @@
   "noResults": "Keine Resultate gefunden.",
   "selectAll": "Alle auswählen",
   "deselectAll": "Alle abwählen",
+  "applyFilter": "Filter anwenden",
   "filters": {
     "discipline": {
       "law": "Rechtswissenschaften"

@@ -15,5 +15,6 @@
   "noAssignment": "Senza incario",
   "noResults": "Nessun risultato trovato.",
   "selectAll": "Selezionare tutti",
-  "deselectAll": "Deselezionare tutti"
+  "deselectAll": "Deselezionare tutti",
+  "applyFilter": "Applicare il filtro"
 }

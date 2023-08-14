@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-zinc-800 mt-2">
     <div class="flex justify-between md:flex-row flex-col container mx-auto py-5 text-xs container mx-auto">
-      <div class="text-white uppercase md:mb-0 mb-3">A running prototype</div>
+      <div class="text-white uppercase md:mb-0 mb-3 hidden md:block">A running prototype</div>
       <div class="text-white uppercase">
         <NuxtLink to="/" class="hover:underline">Home</NuxtLink> |
         <NuxtLink to="/about" class="hover:underline">About</NuxtLink> |

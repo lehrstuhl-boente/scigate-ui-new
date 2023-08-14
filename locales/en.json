@@ -16,6 +16,7 @@
   "noResults": "No results found.",
   "selectAll": "Select all",
   "deselectAll": "Deselect all",
+  "applyFilter": "Apply Filter",
   "filters": {
     "discipline": {
       "law": "Law"
