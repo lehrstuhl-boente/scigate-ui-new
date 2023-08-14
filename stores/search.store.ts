@@ -64,6 +64,7 @@ export const useSearchStore = defineStore('search-store', {
     },
     // called the first time
     async initialLoadResults() {
+      this.showApplyFilterButton = false;
       this.hitlist = [];
       this.engines.forEach(async (engine) => {
         engine.allResultsLoaded = false;

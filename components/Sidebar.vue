@@ -3,7 +3,7 @@
     <Filter v-for="filter in filters" :filter="filter" />
     <FilterEngine />
     <button
-      class="bg-white border py-1 px-2 rounded-md shadow-lg sticky bottom-20 md:bottom-20 hover:bg-gray-50 active:scale-95 active:shadow-md transition-default"
+      class="bg-white border py-1 px-2 rounded-md shadow-lg sticky bottom-20 md:bottom-20 hover:bg-gray-50 active:scale-95 active:shadow-md transition-default mb-10 md:mb-0"
       @click="applyFilters" v-if="searchStore.showApplyFilterButton">
       {{ $t('applyFilter') }}
     </button>
@@ -19,7 +19,6 @@ const { body: filters } = await queryContent<{ body: Filter[] }>('filters').find
 filterStore.$reset();
 
 const applyFilters = () => {
-  searchStore.showApplyFilterButton = false;
   searchStore.initialLoadResults();
 }
 </script>
