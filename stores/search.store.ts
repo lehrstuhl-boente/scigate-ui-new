@@ -5,6 +5,7 @@ interface SearchState {
   query: string;
   hitlist: ResultItem[];
   status: 'loading' | 'ok' | 'newSearch';
+  showApplyFilterButton: boolean;
 }
 
 interface ResponseHitlist {
@@ -27,6 +28,7 @@ export const useSearchStore = defineStore('search-store', {
       hitlist: [],
       status: 'ok',
       engines: [],
+      showApplyFilterButton: false,
     };
   },
   getters: {

@@ -1,6 +1,6 @@
 <template>
   <label class="flex items-center hover:bg-black/5 px-1 rounded" :name="option">
-    <input type="checkbox" class="mr-2" v-model="option.checked">
+    <input type="checkbox" class="mr-2" v-model="option.checked" @change="onCheckboxChange">
     <div class="flex justify-between items-center w-full">
       <span v-if="option.name == 'noAssignment'">
         {{ $t('noAssignment') }}
@@ -15,8 +15,11 @@
 <script lang="ts" setup>
 const { option, filterId } = defineProps<{ option: Option, filterId: string }>();
 
-// save state of checkbox to localstorage in order to preserve it after page refresh
-watch(option, (newOption, oldOption) => {
-  localStorage.setItem(`filter.${filterId}.${option.name}`, newOption.checked.toString());
-});
+const searchStore = useSearchStore();
+
+const onCheckboxChange = () => {
+  searchStore.showApplyFilterButton = true;
+  // save state of checkbox to localstorage in order to preserve it after page refresh
+  localStorage.setItem(`filter.${filterId}.${option.name}`, option.checked.toString());
+}
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CheckboxSelection :options="storeFilter.options" />
+    <SelectAll :options="storeFilter.options" />
     <Checkbox v-for="option in storeFilter.options" :option="option" :filterId="filter.id" />
   </div>
 </template>

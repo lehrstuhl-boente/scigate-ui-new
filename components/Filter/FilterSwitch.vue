@@ -2,7 +2,7 @@
   <div>
     <label class="flex justify-between items-center px-1 hover:bg-black/5 rounded">
       {{ $t(`filters.${filter.id}`) }}
-      <input type="checkbox" class="pt-1 ml-2" v-model="storeFilter.active">
+      <input type="checkbox" class="pt-1 ml-2" v-model="storeFilter.active" @change="onCheckboxChange">
     </label>
   </div>
 </template>
@@ -21,8 +21,8 @@ if (localStorage.getItem(`filter.${filter.id}.active`) === 'true') {
   storeFilter.active = true;
 }
 
-// save state of checkbox to localstorage in order to preserve it after page refresh
-watch(storeFilter, (newOption, oldOption) => {
-  localStorage.setItem(`filter.${filter.id}.active`, newOption.active.toString());
-});
+const onCheckboxChange = () => {
+  // save state of checkbox to localstorage in order to preserve it after page refresh
+  localStorage.setItem(`filter.${filter.id}.active`, filter.active.toString());
+}
 </script>
