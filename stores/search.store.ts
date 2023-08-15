@@ -39,7 +39,6 @@ export const useSearchStore = defineStore('search-store', () => {
   async function initializeEngines() {
     const { body: rawEngines } = await queryContent('engines').only('body').findOne();
     engines.value = rawEngines;
-    console.log(engines.value);
     engines.value.forEach((engine: StoreEngine) => {
       engine.allResultsLoaded = false;
       engine.resultsCount = 0;
@@ -87,7 +86,6 @@ export const useSearchStore = defineStore('search-store', () => {
     // collect the results of all engines
     for (const engine of engines.value) {
       if (!allEnginesUnchecked.value && !engine.checked) continue;
-      console.log(allEnginesUnchecked.value, engine);
       if (engine.allResultsLoaded) continue;
       const body = {
         engine: engine.id,
@@ -144,6 +142,7 @@ export const useSearchStore = defineStore('search-store', () => {
     status,
     engines,
     showApplyFilterButton,
+    allResultsLoaded,
     initializeEngines,
     initialLoadResults,
     loadResults,
