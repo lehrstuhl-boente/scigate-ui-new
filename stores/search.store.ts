@@ -17,7 +17,8 @@ export const useSearchStore = defineStore('search-store', () => {
   const query = ref<string>('');
   const hitlist = ref<ResultItem[]>([]);
   const status = ref<'loading' | 'ok' | 'newSearch'>('ok');
-  const engines = ref<StoreEngine[]>([]);
+  const engines = ref<StoreEngine[]>([]); // checked property of these StoreEngines is always in sync with the checkboxes in the UI
+  const enginesCopy = ref<EngineCopy[]>([]); // checked property is the same as the last time initialLoadResults was called --> filters don't change when loading more results
   const showApplyFilterButton = ref<boolean>(false);
 
   // whether all engines have loaded all available results
@@ -55,6 +56,8 @@ export const useSearchStore = defineStore('search-store', () => {
   async function initialLoadResults() {
     showApplyFilterButton.value = false;
     hitlist.value = [];
+    enginesCopy.value = structuredClone(toRaw(engines.value));
+    loadResults();
     engines.value.forEach(async (engine) => {
       engine.allResultsLoaded = false;
       engine.resultsCount = 0;
@@ -73,7 +76,6 @@ export const useSearchStore = defineStore('search-store', () => {
       engine.loading = false;
       engine.totalResultsCount = res.hits;
     });
-    loadResults();
   }
 
   // directly called (not via initialLoadResults) when loading more results
@@ -85,7 +87,8 @@ export const useSearchStore = defineStore('search-store', () => {
     let mostResults = 0;
     // collect the results of all engines
     for (const engine of engines.value) {
-      if (!allEnginesUnchecked.value && !engine.checked) continue;
+      const engineCopy = getObject<EngineCopy>(enginesCopy.value, { id: engine.id });
+      if (!allEnginesUnchecked.value && !engineCopy.checked) continue; // use copy because checked property in the original could have changed in the meantime
       if (engine.allResultsLoaded) continue;
       const body = {
         engine: engine.id,
