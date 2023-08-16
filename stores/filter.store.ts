@@ -1,11 +1,42 @@
 export const useFilterStore = defineStore('filter-store', () => {
   const filters = ref<Filter[]>([]);
 
-  function addFilter(filter: Filter) {
-    // remove old filter if there was already a filter object with the same ID in the store
-    filters.value = filters.value.filter((tmpFilter) => tmpFilter.id != filter.id);
-    // add filter with option object to store
-    filters.value.push(filter);
+  // loading of values from localStorage must be done here not in the component, so that filters are ready when initialLoadResults is called on reload
+  async function initializeFilters() {
+    const { body: tmpFilters } = await queryContent<{ body: Filter[] }>('filters').findOne();
+    for (const filter of tmpFilters) {
+      switch (filter.type) {
+        case 'checkbox':
+          // bring options array of filter in right shape
+          let tmpOptions: Option[] = [];
+          for (const optionName of (filter as FilterCheckboxRaw).options) {
+            let checked = false;
+            if (localStorage.getItem(`filter.${filter.id}.${optionName}`) === 'true') {
+              checked = true;
+            }
+            tmpOptions.push({
+              name: optionName,
+              count: 0,
+              checked,
+            });
+          }
+          (filter as FilterCheckbox).options = tmpOptions;
+          break;
+        case 'switch':
+          (filter as FilterSwitch).active = false;
+          if (localStorage.getItem(`filter.${filter.id}.active`) === 'true') {
+            (filter as FilterSwitch).active = true;
+          }
+          break;
+        case 'date':
+          const storageFrom = localStorage.getItem('filter.date.from');
+          if (storageFrom) (filter as FilterDate).from = parseInt(storageFrom);
+          const storageTo = localStorage.getItem('filter.date.to');
+          if (storageTo) (filter as FilterDate).to = parseInt(storageTo);
+          break;
+      }
+    }
+    filters.value = tmpFilters;
   }
 
   function getFilterById(id: string) {
@@ -18,7 +49,7 @@ export const useFilterStore = defineStore('filter-store', () => {
 
   return {
     filters,
-    addFilter,
+    initializeFilters,
     getFilterById,
     $reset,
   };

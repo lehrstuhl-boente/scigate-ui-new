@@ -22,6 +22,7 @@ const searchStore = useSearchStore();
 const filterStore = useFilterStore();
 
 await searchStore.initializeEngines();
+await filterStore.initializeFilters();
 
 if (searchStore.query !== '') {
   searchStore.initialLoadResults();
