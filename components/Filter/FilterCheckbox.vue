@@ -26,7 +26,7 @@ for (const optionName of tmpCheckboxFilter.options) {
 }
 
 // assign options to clone of filter object to avoid errors on hot-reload
-const filterClone: FilterCheckbox = structuredClone(filter as unknown as FilterCheckbox);
+const filterClone: FilterCheckbox = useCloneDeep(filter as unknown as FilterCheckbox);
 filterClone.options = tmpOptions
 
 filterStore.addFilter(filterClone);

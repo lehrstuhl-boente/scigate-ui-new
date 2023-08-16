@@ -56,7 +56,7 @@ export const useSearchStore = defineStore('search-store', () => {
   async function initialLoadResults() {
     showApplyFilterButton.value = false;
     hitlist.value = [];
-    enginesCopy.value = structuredClone(toRaw(engines.value));
+    enginesCopy.value = useCloneDeep(engines.value);
     loadResults();
     engines.value.forEach(async (engine) => {
       engine.allResultsLoaded = false;
