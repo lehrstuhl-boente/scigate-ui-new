@@ -14,6 +14,8 @@ interface ResponseHitlist {
 }
 
 export const useSearchStore = defineStore('search-store', () => {
+  const filterStore = useFilterStore();
+
   const query = ref<string>('');
   const hitlist = ref<ResultItem[]>([]);
   const status = ref<'loading' | 'ok' | 'newSearch'>('ok');
@@ -56,7 +58,10 @@ export const useSearchStore = defineStore('search-store', () => {
   async function initialLoadResults() {
     showApplyFilterButton.value = false;
     hitlist.value = [];
+    // clone engines and filters and only use these copies from now on
+    // --> ensure new filter configurations are only used after initialLoadResults is called again (not when loading more results)
     enginesCopy.value = useCloneDeep(engines.value);
+    filterStore.filtersCopy = useCloneDeep(filterStore.filters);
     loadResults();
     engines.value.forEach(async (engine) => {
       engine.allResultsLoaded = false;
@@ -65,7 +70,7 @@ export const useSearchStore = defineStore('search-store', () => {
         engine: engine.id,
         term: query.value,
         type: 'search',
-        filters: useFilterStore().filters,
+        filters: filterStore.filtersCopy,
       };
       engine.loading = true;
       const res = await $fetch<ResponseSearch>('/stubs', {
@@ -95,7 +100,7 @@ export const useSearchStore = defineStore('search-store', () => {
         term: query.value,
         type: 'hitlist',
         start: engine.resultsCount,
-        filters: useFilterStore().filters,
+        filters: filterStore.filtersCopy,
       };
       const enginePromise = new Promise<void>((resolve, reject) => {
         $fetch<ResponseHitlist>('/stubs', {
