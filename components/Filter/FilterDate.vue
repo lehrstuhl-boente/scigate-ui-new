@@ -19,7 +19,7 @@ const searchStore = useSearchStore();
 
 filterStore.addFilter(filter);
 // read filter object from store again in order to use it as prop for Checkbox (only that way it's reactive)
-const storeFilter = filterStore.getFilterById<FilterDate>(filter.id);
+const storeFilter = filterStore.getFilterById(filter.id) as FilterDate;
 
 const storageFrom = localStorage.getItem('filter.date.from');
 if (storageFrom) storeFilter.from = parseInt(storageFrom);

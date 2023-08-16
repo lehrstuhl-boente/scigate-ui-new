@@ -14,7 +14,7 @@ const filterStore = useFilterStore();
 
 filterStore.addFilter(filter);
 // read filter object from store again in order to use it as prop for Checkbox (only that way it's reactive)
-const storeFilter = filterStore.getFilterById<FilterSwitch>(filter.id);
+const storeFilter = filterStore.getFilterById(filter.id) as FilterSwitch;
 
 storeFilter.active = false;
 if (localStorage.getItem(`filter.${filter.id}.active`) === 'true') {

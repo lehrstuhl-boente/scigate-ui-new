@@ -8,8 +8,8 @@ export const useFilterStore = defineStore('filter-store', () => {
     filters.value.push(filter);
   }
 
-  function getFilterById<T>(id: string) {
-    return getObject<T>(filters.value as T[], { id });
+  function getFilterById(id: string) {
+    return useFind(filters.value, { id });
   }
 
   function $reset() {

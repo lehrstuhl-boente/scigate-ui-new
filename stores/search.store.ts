@@ -87,8 +87,8 @@ export const useSearchStore = defineStore('search-store', () => {
     let mostResults = 0;
     // collect the results of all engines
     for (const engine of engines.value) {
-      const engineCopy = getObject<EngineCopy>(enginesCopy.value, { id: engine.id });
-      if (!allEnginesUnchecked.value && !engineCopy.checked) continue; // use copy because checked property in the original could have changed in the meantime
+      const engineCopy = useFind(enginesCopy.value, { id: engine.id });
+      if (engineCopy !== undefined && !allEnginesUnchecked.value && !engineCopy.checked) continue; // use copy because checked property in the original could have changed in the meantime
       if (engine.allResultsLoaded) continue;
       const body = {
         engine: engine.id,

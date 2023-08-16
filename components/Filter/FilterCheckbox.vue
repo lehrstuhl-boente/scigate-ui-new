@@ -31,5 +31,5 @@ filterClone.options = tmpOptions
 
 filterStore.addFilter(filterClone);
 // read filter object from store again in order to use it as prop for Checkbox (only that way it's reactive)
-const storeFilter = filterStore.getFilterById<FilterCheckbox>(filter.id);
+const storeFilter = filterStore.getFilterById(filter.id) as FilterCheckbox;
 </script>
