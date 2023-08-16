@@ -2,7 +2,7 @@ export const useFilterStore = defineStore('filter-store', () => {
   const filters = ref<Filter[]>([]); // filter values are always in sync with the UI
   const filtersCopy = ref<Filter[]>([]); // holds the filter values that were used the last time initialLoadResults is called
 
-  // loading of values from localStorage must be done here not in the component, so that filters are ready when initialLoadResults is called on reload
+  // loading of values from localStorage must be done here, not in the component, so that filters are ready when initialLoadResults is called on reload
   async function initializeFilters() {
     const { body: tmpFilters } = await queryContent<{ body: Filter[] }>('filters').findOne();
     for (const filter of tmpFilters) {

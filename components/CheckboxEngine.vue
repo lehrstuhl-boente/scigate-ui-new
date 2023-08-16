@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center w-full">
       <span>{{ engine.title }}</span>
       <span class="text-sm" v-if="!engine.loading">({{ engine.totalResultsCount }})</span>
-      <LoadingSpinnerSmall v-else />
+      <LoadingSpinnerSmall v-else class="opacity-40" />
     </div>
   </label>
 </template>
