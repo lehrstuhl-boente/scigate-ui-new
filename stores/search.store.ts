@@ -62,8 +62,7 @@ export const useSearchStore = defineStore('search-store', () => {
     // --> ensure new filter configurations are only used after initialLoadResults is called again (not when loading more results)
     enginesCopy.value = useCloneDeep(engines.value);
     filterStore.filtersCopy = useCloneDeep(filterStore.filters);
-    loadResults();
-    engines.value.forEach(async (engine) => {
+    for (const engine of engines.value) {
       engine.allResultsLoaded = false;
       engine.resultsCount = 0;
       const body = {
@@ -73,14 +72,16 @@ export const useSearchStore = defineStore('search-store', () => {
         filters: filterStore.filtersCopy,
       };
       engine.loading = true;
-      const res = await $fetch<ResponseSearch>('/stubs', {
+      $fetch<ResponseSearch>('/stubs', {
         baseURL: config.public.baseURL,
         body,
         method: 'POST',
+      }).then((res) => {
+        engine.loading = false;
+        engine.totalResultsCount = res.hits;
       });
-      engine.loading = false;
-      engine.totalResultsCount = res.hits;
-    });
+    }
+    loadResults();
   }
 
   // directly called (not via initialLoadResults) when loading more results
