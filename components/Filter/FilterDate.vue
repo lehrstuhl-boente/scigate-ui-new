@@ -6,7 +6,8 @@
     </label>
     <label>
       <span class="mr-2">{{ $t('to') }}:</span>
-      <input type="number" v-model="filter.to" placeholder="2000" class="py-1 px-2 max-w-[80px] rounded-md border">
+      <input type="number" v-model="filter.to" placeholder="2000" :min="filter.from"
+        class="py-1 px-2 max-w-[80px] rounded-md border" @change="if (filter.to < filter.from) filter.to = filter.from;">
     </label>
   </div>
 </template>
