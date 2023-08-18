@@ -7,7 +7,7 @@
     <label>
       <span class="mr-2">{{ $t('to') }}:</span>
       <input type="number" v-model="filter.to" placeholder="2000" :min="filter.from"
-        class="py-1 px-2 max-w-[80px] rounded-md border" @change="if (filter.to < filter.from) filter.to = filter.from;">
+        class="py-1 px-2 max-w-[80px] rounded-md border" @change="handleChange">
     </label>
   </div>
 </template>
@@ -26,4 +26,10 @@ watch(() => filter.to, () => {
   searchStore.showApplyFilterButton = true;
   if (filter.to != null) localStorage.setItem('filter.date.to', filter.to.toString());
 });
+
+const handleChange = () => {
+  if (filter.to < filter.from) { // TODO: make minus values for "to" possible when "from" is empty
+    filter.to = filter.from;
+  }
+}
 </script>
