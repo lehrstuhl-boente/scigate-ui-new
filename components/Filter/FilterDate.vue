@@ -28,7 +28,7 @@ watch(() => filter.to, () => {
 });
 
 const handleChange = () => {
-  if (filter.to < filter.from) { // TODO: make minus values for "to" possible when "from" is empty
+  if (filter.to < filter.from && filter.from != undefined && filter.from.toString() !== '') {
     filter.to = filter.from;
   }
 }
