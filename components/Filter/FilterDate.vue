@@ -2,12 +2,13 @@
   <div class="flex items-center">
     <label class="mr-3">
       <span class="mr-2">{{ $t('from') }}:</span>
-      <input type="number" v-model="filter.from" placeholder="1990" class="py-1 px-2 max-w-[80px] rounded-md border">
+      <input type="number" v-model="filter.from" placeholder="1990" class="py-1 px-2 max-w-[80px] rounded-md border"
+        @change="handleChangeFrom">
     </label>
     <label>
       <span class="mr-2">{{ $t('to') }}:</span>
       <input type="number" v-model="filter.to" placeholder="2000" :min="filter.from"
-        class="py-1 px-2 max-w-[80px] rounded-md border" @change="handleChange">
+        class="py-1 px-2 max-w-[80px] rounded-md border" @change="handleChangeTo">
     </label>
   </div>
 </template>
@@ -27,7 +28,13 @@ watch(() => filter.to, () => {
   if (filter.to != null) localStorage.setItem('filter.date.to', filter.to.toString());
 });
 
-const handleChange = () => {
+const handleChangeFrom = () => {
+  if (filter.from < filter.to && filter.to != undefined && filter.to.toString() !== '') {
+    filter.from = filter.to;
+  }
+}
+
+const handleChangeTo = () => {
   if (filter.to < filter.from && filter.from != undefined && filter.from.toString() !== '') {
     filter.to = filter.from;
   }
