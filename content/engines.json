@@ -52,5 +52,11 @@
     "title": "GoTriple",
     "imageFormat": "svg",
     "url": "https://www.gotriple.eu/"
+  },
+  {
+    "id": "iurisprudentia",
+    "title": "Iurisprudentia",
+    "imageFormat": "png",
+    "url": "https://rwi.app/iurisprudentia/"
   }
 ]
