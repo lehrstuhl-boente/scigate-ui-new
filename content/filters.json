@@ -2,17 +2,17 @@
   {
     "id": "discipline",
     "type": "checkbox",
-    "options": ["noAssignment", "law"]
+    "options": ["unknown", "law"]
   },
   {
     "id": "language",
     "type": "checkbox",
-    "options": ["noAssignment", "de", "fr", "it", "en"]
+    "options": ["unknown", "de", "fr", "it", "en"]
   },
   {
     "id": "availability",
     "type": "checkbox",
-    "options": ["noAssignment", "freeOnlineAvailable", "restrictedOnlineAvailable", "notOnlineAvailable"]
+    "options": ["unknown", "freeOnlineAvailable", "restrictedOnlineAvailable", "notOnlineAvailable"]
   },
   {
     "id": "date",
