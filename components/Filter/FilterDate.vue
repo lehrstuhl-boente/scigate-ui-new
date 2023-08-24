@@ -2,12 +2,12 @@
   <div class="flex items-center">
     <label class="mr-3">
       <span class="mr-2">{{ $t('from') }}:</span>
-      <input type="number" v-model="filter.from" placeholder="1990" class="py-1 px-2 max-w-[80px] rounded-md border"
-        @change="handleChangeFrom">
+      <input type="number" v-model.number="filter.from" placeholder="1990"
+        class="py-1 px-2 max-w-[80px] rounded-md border" @change="handleChangeFrom">
     </label>
     <label>
       <span class="mr-2">{{ $t('to') }}:</span>
-      <input type="number" v-model="filter.to" placeholder="2000" :min="filter.from"
+      <input type="number" v-model.number="filter.to" placeholder="2000" :min="filter.from"
         class="py-1 px-2 max-w-[80px] rounded-md border" @change="handleChangeTo">
     </label>
   </div>

@@ -24,16 +24,20 @@ export const useFilterStore = defineStore('filter-store', () => {
           (filter as FilterCheckbox).options = tmpOptions;
           break;
         case 'switch':
-          (filter as FilterSwitch).active = false;
+          const switchFilter = filter as FilterSwitch;
+          switchFilter.active = false;
           if (localStorage.getItem(`filter.${filter.id}.active`) === 'true') {
-            (filter as FilterSwitch).active = true;
+            switchFilter.active = true;
           }
           break;
         case 'date':
+          const dateFilter = filter as any;
+          dateFilter.from = '';
+          dateFilter.to = '';
           const storageFrom = localStorage.getItem('filter.date.from');
-          if (storageFrom) (filter as FilterDate).from = parseInt(storageFrom);
+          if (storageFrom) dateFilter.from = parseInt(storageFrom);
           const storageTo = localStorage.getItem('filter.date.to');
-          if (storageTo) (filter as FilterDate).to = parseInt(storageTo);
+          if (storageTo) dateFilter.to = parseInt(storageTo);
           break;
       }
     }
