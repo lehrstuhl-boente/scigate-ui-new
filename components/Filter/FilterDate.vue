@@ -29,13 +29,13 @@ watch(() => filter.to, () => {
 });
 
 const handleChangeFrom = () => {
-  if (filter.from < filter.to && filter.to != undefined && filter.to.toString() !== '') {
+  if (filter.from > filter.to && filter.to != undefined && filter.to.toString() !== '') {
     filter.from = filter.to;
   }
 }
 
 const handleChangeTo = () => {
-  if (filter.to < filter.from && filter.from != undefined && filter.from.toString() !== '') {
+  if (filter.from > filter.to && filter.from != undefined && filter.from.toString() !== '') {
     filter.to = filter.from;
   }
 }
