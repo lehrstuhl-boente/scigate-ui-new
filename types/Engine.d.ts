@@ -3,4 +3,5 @@ interface Engine {
   title: string;
   imageFormat: string;
   url: string;
+  published: boolean;
 }

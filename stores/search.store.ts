@@ -41,7 +41,7 @@ export const useSearchStore = defineStore('search-store', () => {
 
   async function initializeEngines() {
     const { body: rawEngines } = await queryContent('engines').only('body').findOne();
-    engines.value = rawEngines;
+    engines.value = rawEngines.filter((rawEngine: Engine) => rawEngine.published); // only consider published engines
     engines.value.forEach((engine: StoreEngine) => {
       engine.allResultsLoaded = false;
       engine.resultsCount = 0;
