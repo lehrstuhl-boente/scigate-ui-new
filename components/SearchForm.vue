@@ -5,7 +5,7 @@
       class="py-2 pl-4 pr-1 w-full font-sans h-[45px] outline-none text-sm">
     <button
       class="flex items-center justify-center px-3 bg-white h-[45px] hover:bg-gray-100 active:bg-gray-200 hover:cursor-pointer transition-default">
-      <span class="material-icons-outlined select-none">search</span>
+      <img src="/icons/search.svg" class="select-none" style="user-drag: none" />
     </button>
   </form>
 </template>

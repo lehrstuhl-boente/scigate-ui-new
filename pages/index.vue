@@ -12,9 +12,9 @@
       </div>
       <div class="flex justify-center mb-7">
         <a @click="scrollTo"
-          class="flex items-center py-2 pl-3 pr-1 rounded-md hover:cursor-pointer hover:bg-gray-200 active:bg-gray-300">
+          class="flex items-center py-1 pl-3 pr-1 rounded-md hover:cursor-pointer hover:bg-gray-200 active:bg-gray-300">
           {{ $t('learnMore') }}
-          <span class="material-icons-outlined ml-1">expand_more</span>
+          <img src="/icons/expand_more.svg" class="ml-1 mt-1" />
         </a>
       </div>
     </div>

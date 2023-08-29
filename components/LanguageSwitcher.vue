@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <span class="material-icons-outlined mr-[-30px] z-10 pointer-events-none">language</span>
+    <img src="/icons/language.svg" class="mr-[-30px] z-10 pointer-events-none" />
     <select
       class="pl-9 p-2 appearance-none rounded-md z-0 bg-transparent hover:cursor-pointer hover:bg-black/10 transition-default uppercase"
       v-model="selected">

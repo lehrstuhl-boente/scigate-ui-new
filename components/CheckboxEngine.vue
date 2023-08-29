@@ -3,8 +3,11 @@
     <input type="checkbox" class="mr-2" v-model="engine.checked">
     <div class="flex justify-between items-center w-full">
       <span>{{ engine.title }}</span>
-      <span class="text-sm ml-2" v-if="!engine.loading">({{ engine.totalResultsCount }})</span>
-      <LoadingSpinnerSmall v-else class="opacity-40 ml-2" />
+      <LoadingSpinnerSmall v-if="engine.loading" class="opacity-40 ml-2" />
+      <span class="text-sm ml-2" v-else-if="engine.totalResultsCount !== undefined">
+        ({{ engine.totalResultsCount }})
+      </span>
+      <img src="/icons/error.svg" v-else-if="engine.error" class="w-[20px] h-[20px]" />
     </div>
   </label>
 </template>
