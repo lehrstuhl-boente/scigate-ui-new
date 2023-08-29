@@ -23,7 +23,9 @@
         <h2 class="text-3xl text-center my-5">{{ $t('engines') }}</h2>
         <p class="max-w-3xl text-black/30 text-center mx-auto">{{ $t('enginesText') }}</p>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <EngineCard v-for="engine in engines" :engine="engine" />
+          <template v-for="engine in engines">
+            <EngineCard :engine="engine" v-if="engine.published" />
+          </template>
         </div>
       </div>
     </div>
