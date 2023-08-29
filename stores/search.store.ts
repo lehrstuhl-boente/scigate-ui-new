@@ -72,13 +72,18 @@ export const useSearchStore = defineStore('search-store', () => {
         filters: filterStore.filtersCopy,
       };
       engine.loading = true;
+      engine.error = false;
       $fetch<ResponseSearch>('/stubs', {
         baseURL: config.public.baseURL,
         body,
         method: 'POST',
       }).then((res) => {
         engine.loading = false;
-        engine.totalResultsCount = res.hits;
+        if (res.status == 'error') {
+          engine.error = true;
+        } else {
+          engine.totalResultsCount = res.hits;
+        }
       });
     }
     loadResults();
