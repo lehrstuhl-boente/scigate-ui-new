@@ -77,14 +77,16 @@ export const useSearchStore = defineStore('search-store', () => {
         baseURL: config.public.baseURL,
         body,
         method: 'POST',
-      }).then((res) => {
-        engine.loading = false;
-        if (res.status == 'error') {
-          engine.error = true;
-        } else {
-          engine.totalResultsCount = res.hits;
-        }
-      });
+      })
+        .then((res) => {
+          engine.loading = false;
+          if (res.status == 'error') {
+            engine.error = true;
+          } else {
+            engine.totalResultsCount = res.hits;
+          }
+        })
+        .catch((error) => (engine.error = true));
     }
     loadResults();
   }

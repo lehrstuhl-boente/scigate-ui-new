@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Scigate ist ein Showcase und One-Stop-Shop für (Rechts-)Daten. Zurzeit handelt es sich bei Scigate um einen frühen Prototyp',
+            'Scigate ist ein Showcase und One-Stop-Shop für (Rechts-)Daten. Zurzeit handelt es sich bei Scigate um einen Prototypen.',
         },
       ],
       link: [
