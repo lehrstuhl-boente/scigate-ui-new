@@ -30,9 +30,8 @@ Herausforderung der nahen Zukunft wird es sein, weitere Datenquellen anzubinden,
 
 Scigate ist als Open-Source-Projekt konzipiert. Der Zugang zum Quellcode findet sich zurzeit hier:
 
-- Allgemeines Suchinterface: https://github.com/Velofisch/crossrecherche-ui
-- Proxies zur Anbindung von Datenquellen: https://github.com/Velofisch/Crossrecherche-proxies
-- API zum Massendownload der Suchergebnisse: https://github.com/Velofisch/Scigate-API
-- Userinterface von entscheidsuche: https://github.com/entscheidsuche/entscheidsuche-vue
+- Allgemeines Suchinterface: https://github.com/lehrstuhl-boente/scigate-ui-new
+- Proxies zur Anbindung von Datenquellen: https://github.com/lehrstuhl-boente/scigate-proxies
+- API zum Massendownload der Suchergebnisse: https://github.com/lehrstuhl-boente/scigate-api
 
 Über Ideen, Mitarbeit bei der Weiterentwicklung, Hinweise, Rückmeldungen, technische Anfragen etc. an lst.boente@rwi.uzh.ch würden wir uns sehr freuen!
