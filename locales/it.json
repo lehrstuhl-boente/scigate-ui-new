@@ -16,5 +16,6 @@
   "noResults": "Nessun risultato trovato.",
   "selectAll": "Selezionare tutti",
   "deselectAll": "Deselezionare tutti",
-  "applyFilter": "Applicare il filtro"
+  "applyFilter": "Applicare il filtro",
+  "sorting": "Ordinamento"
 }

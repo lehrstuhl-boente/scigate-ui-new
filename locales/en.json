@@ -17,6 +17,7 @@
   "selectAll": "Select all",
   "deselectAll": "Deselect all",
   "applyFilter": "Apply Filter",
+  "sorting": "Sorting",
   "filters": {
     "discipline": {
       "law": "Law"

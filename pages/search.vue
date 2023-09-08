@@ -2,6 +2,9 @@
   <div class="flex flex-col md:flex-row gap-5">
     <Sidebar class="md:w-1/3" />
     <div class="md:w-2/3">
+      <div class="flex justify-end mb-11">
+        <SortingDropdown />
+      </div>
       <div v-if="searchStore.hitlist.length !== 0">
         <ResultItem v-for="item in searchStore.hitlist" :item="item" />
       </div>

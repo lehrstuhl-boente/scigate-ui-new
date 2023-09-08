@@ -17,6 +17,7 @@
   "selectAll": "Alle auswählen",
   "deselectAll": "Alle abwählen",
   "applyFilter": "Filter anwenden",
+  "sorting": "Sortierung",
   "filters": {
     "discipline": {
       "law": "Rechtswissenschaften"
