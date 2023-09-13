@@ -30,14 +30,14 @@ export const useFilterStore = defineStore('filter-store', () => {
             switchFilter.active = true;
           }
           break;
-        case 'date':
-          const dateFilter = filter as any;
-          dateFilter.from = '';
-          dateFilter.to = '';
-          const storageFrom = localStorage.getItem('filter.date.from');
-          if (storageFrom) dateFilter.from = parseInt(storageFrom);
-          const storageTo = localStorage.getItem('filter.date.to');
-          if (storageTo) dateFilter.to = parseInt(storageTo);
+        case 'year':
+          const yearFilter = filter as any;
+          yearFilter.from = '';
+          yearFilter.to = '';
+          const storageFrom = localStorage.getItem('filter.year.from');
+          if (storageFrom) yearFilter.from = parseInt(storageFrom);
+          const storageTo = localStorage.getItem('filter.year.to');
+          if (storageTo) yearFilter.to = parseInt(storageTo);
           break;
       }
     }

@@ -14,18 +14,18 @@
 </template>
 
 <script lang="ts" setup>
-const { filter } = defineProps<{ filter: FilterDate }>();
+const { filter } = defineProps<{ filter: FilterYear }>();
 
 const searchStore = useSearchStore();
 
 // save state of the two number fields to localstorage in order to preserve it after page refresh
 watch(() => filter.from, () => {
   searchStore.showApplyFilterButton = true;
-  if (filter.from != null) localStorage.setItem('filter.date.from', filter.from.toString());
+  if (filter.from != null) localStorage.setItem('filter.year.from', filter.from.toString());
 });
 watch(() => filter.to, () => {
   searchStore.showApplyFilterButton = true;
-  if (filter.to != null) localStorage.setItem('filter.date.to', filter.to.toString());
+  if (filter.to != null) localStorage.setItem('filter.year.to', filter.to.toString());
 });
 
 const handleChangeFrom = () => {

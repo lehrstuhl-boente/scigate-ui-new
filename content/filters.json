@@ -15,7 +15,7 @@
     "options": ["unknown", "freeOnlineAvailable", "restrictedOnlineAvailable", "notOnlineAvailable"]
   },
   {
-    "id": "date",
-    "type": "date"
+    "id": "year",
+    "type": "year"
   }
 ]

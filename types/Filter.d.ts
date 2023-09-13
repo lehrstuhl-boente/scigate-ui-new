@@ -1,4 +1,4 @@
 interface Filter {
   id: string;
-  type: 'checkbox' | 'switch' | 'date';
+  type: 'checkbox' | 'switch' | 'year';
 }
