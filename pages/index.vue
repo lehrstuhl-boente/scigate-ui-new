@@ -2,13 +2,11 @@
   <div class="container mx-auto px-4 mb-12">
     <div class="flex flex-col min-h-screen">
       <MainHeader />
-      <div class="flex-1 flex items-center justify-center max-w-5xl w-full text-center mx-auto">
-        <div>
-          <h1 class="text-3xl text-center max-w-3xl">
-            {{ $t('headline') }}
-          </h1>
-          <SearchFormBig class="mt-10" />
-        </div>
+      <div class="flex-1 flex flex-col items-center justify-center max-w-5xl w-full text-center mx-auto">
+        <h1 class="text-3xl text-center max-w-3xl">
+          {{ $t('headline') }}
+        </h1>
+        <SearchFormBig class="mt-10" />
       </div>
       <div class="flex justify-center mb-7">
         <a @click="scrollTo"

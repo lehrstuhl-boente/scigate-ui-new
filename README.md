@@ -1,4 +1,4 @@
-# IusR Client
+# Scigate Frontend
 
 Frontend for the Scigate search engine.
 

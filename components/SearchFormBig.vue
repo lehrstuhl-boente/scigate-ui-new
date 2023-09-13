@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitSearch"
-    class="focus-within:shadow-2xl flex items-center shadow-lg rounded-xl overflow-hidden transition-default">
+    class="focus-within:shadow-2xl flex items-center shadow-lg rounded-xl overflow-hidden transition-default md:w-2/3 w-full">
     <input type="text" placeholder="Search Term …" v-model.trim="query"
       class="py-3 pl-4 pr-1 w-full font-sans h-[50px] outline-none">
     <button
