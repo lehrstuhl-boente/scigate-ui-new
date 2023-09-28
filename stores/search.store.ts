@@ -73,7 +73,7 @@ export const useSearchStore = defineStore('search-store', () => {
       };
       engine.loading = true;
       engine.error = false;
-      $fetch<ResponseSearch>('/stubs', {
+      $fetch<ResponseSearch>('/stubs2', {
         baseURL: config.public.baseURL,
         body,
         method: 'POST',
