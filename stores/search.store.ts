@@ -111,7 +111,7 @@ export const useSearchStore = defineStore('search-store', () => {
         filters: filterStore.filtersCopy,
       };
       const enginePromise = new Promise<void>((resolve, reject) => {
-        $fetch<ResponseHitlist>('/stubs', {
+        $fetch<ResponseHitlist>('/stubs2', {
           baseURL: config.public.baseURL,
           body,
           method: 'POST',
